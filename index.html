@@ -249,17 +249,22 @@
             <div class="pair-title">Code Example</div>
             <div class="pair-desc" style="max-height: 500px; opacity: 1; margin-top: 10px;">
                 <pre><code class="language-lua">-- Services
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 -- Variables
-
+local Text = "Hello World!"
 -- Events
-
+local EventFolder = ReplicatedStorage.Events
+local Event = EventFolder.Event
 -- Modules
-
--- Customize
-
+local ModuleFolder = ReplicatedStorage.Modules
+local GameModule = require(ModuleFolder.GameModule)
 -- Functions
-
+local function PrintAfterWait()
+    task.wait(GameModule.TimerLenght)
+    print(Text)
+end
 -- Logic
+Event.OnServerEvent:Connect(PrintAfterWait)
                 </code></pre>
             </div>
         </div>
