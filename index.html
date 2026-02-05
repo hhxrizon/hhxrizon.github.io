@@ -307,7 +307,7 @@ local function PrintAfterWait()
     print(Text)
 end
 -- Logic
-Event.OnServerEvent:Connect(PrintAfterWait))</code></pre>
+Event.OnServerEvent:Connect(PrintAfterWait) -- Fixed: Removed extra closing parenthesis</code></pre>
                 </div>
             </div>
         </div>
@@ -326,7 +326,9 @@ local Module = {
 }
 return Module</code></pre>
                 </div>
-                  <div class="pair-item" onclick="toggleDropdown(this)">
+            </div>
+
+            <div class="pair-item" onclick="toggleDropdown(this)">
                 <div class="pair-meta">-- MODULE / JOHN'S DINER</div>
                 <div class="pair-title">Name Tag Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
@@ -336,84 +338,70 @@ local ServerStorage = game:GetService("ServerStorage")
 local GradientFolder = ServerStorage.Gradients
 -- Module
 local Settings = {
-	GroupId = 3247638,
-	DefaultRole = "Unknown.",
-	NameGUIBlacklist = {7214684052, 3062864218, 4368060093, 4119755267, 4119510927, 4046068304, 4045970588, 7513271007},
-	NameGUIColors = {
-		{UserId = //Censored, Color = nil, NameOverride = "? Hhxrizon ?", RoleOverride = "Archangel.", Gradient = GradientFolder.PinkCyan},
-		{UserId = //Censored, Color = nil, NameOverride = "? Soleil ?", RoleOverride = "The Acolyte.", Gradient = GradientFolder.BlackPurple},
-		{UserId = //Censored, Color = nil, NameOverride = "? Unicorn ?", RoleOverride = "Pookie Bear.", Gradient = GradientFolder.PinkRedYellow},
-		{UserId = //Censored, Color = nil, NameOverride = "? Carnis ?", RoleOverride = "The Spectator.", Gradient = GradientFolder.BlackRed},
-		{UserId = //Censored, Color = nil, NameOverride = "? Donnie ?", RoleOverride = "Diva!", Gradient = GradientFolder.PinkPeach},
-	},
-	DefaultDark = true,
-	DefaultModlightEnabledUsers = {3062864218, 
-		2348993256, 
-		3299775775
-	},
-	NameGUIOffset = Vector3.new(0, 1.55, 0),
-	NameGUIWeldPart = "Head",
+    GroupId = 3247638,
+    DefaultRole = "Unknown.",
+    NameGUIBlacklist = {7214684052, 3062864218, 4368060093},
+    NameGUIColors = {
+        {UserId = 0, Color = nil, NameOverride = "? Hhxrizon ?", RoleOverride = "Archangel.", Gradient = GradientFolder.PinkCyan},
+        {UserId = 0, Color = nil, NameOverride = "? Soleil ?", RoleOverride = "The Acolyte.", Gradient = GradientFolder.BlackPurple}
+    },
+    NameGUIOffset = Vector3.new(0, 1.55, 0),
+    NameGUIWeldPart = "Head",
 }
 return Settings</code></pre>
                 </div> 
-                        <div class="pair-item" onclick="toggleDropdown(this)">
+            </div>
+
+            <div class="pair-item" onclick="toggleDropdown(this)">
                 <div class="pair-meta">-- MODULE / JOHN'S DINER</div>
                 <div class="pair-title">Door Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
-                    <pre><code class="language-lua"></code>-- Module
+                    <pre><code class="language-lua">-- Module
 local Settings = {
-	DebounceTime = 0.25,
-	Easing = {
-		Open = {
-			Enum.EasingStyle.Back,
-			Enum.EasingDirection.Out
-		},
-		Close = {
-			Enum.EasingStyle.Sine,
-			Enum.EasingDirection.Out
-		}
-	},
+    DebounceTime = 0.25,
+    Easing = {
+        Open = {Enum.EasingStyle.Back, Enum.EasingDirection.Out},
+        Close = {Enum.EasingStyle.Sine, Enum.EasingDirection.Out}
+    },
 }
-return Settings
--- Customizable in door attributes:
--- Open/CloseSoundId
--- Open/CloseTime
--- OpenAngle</pre>
+return Settings</code></pre>
                 </div> 
-            </div> </div> </div>
-
-    <div class="data-column">
-    <div class="column-header"><span>03 // SHOWCASE</span><span>MEDIA</span></div>
-    <div class="column-content">
-        <div class="pair-item" onclick="toggleDropdown(this)">
-            <div class="pair-meta">-- IMAGE / JOHN'S DINER</div>
-            <div class="pair-title">NAME TAGS <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-            <div class="video-box">
-                <img src="b797f81cfa76227f199c51e76f6398dd.png" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2; border-radius: 0;">
-            </div>
-        </div>
-
-        <div class="pair-item" onclick="toggleDropdown(this)">
-            <div class="pair-meta">-- VIDEO / JOHN'S DINER</div>
-            <div class="pair-title">BLACKOUT SYSTEM <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-            <div class="video-box">
-                <video width="100%" height="100%" controls style="border-radius: 0; object-fit: cover; position: relative; z-index: 2;">
-                    <source src="2026-02-05_15-28-06.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-        <div class="pair-item" onclick="toggleDropdown(this)">
-            <div class="pair-meta">-- VIDEO / JOHN'S DINER</div>
-            <div class="pair-title">DOOR SYSTEM <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-            <div class="video-box">
-                <video width="100%" height="100%" controls style="border-radius: 0; object-fit: cover; position: relative; z-index: 2;">
-                    <source src="2026-02-05_15-37-29.mp4" type="video/mp4">
-                </video>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="data-column">
+        <div class="column-header"><span>03 // SHOWCASE</span><span>MEDIA</span></div>
+        <div class="column-content">
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- IMAGE / JOHN'S DINER</div>
+                <div class="pair-title">NAME TAGS <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="video-box">
+                    <img src="b797f81cfa76227f199c51e76f6398dd.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
+                </div>
+            </div>
+
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- VIDEO / JOHN'S DINER</div>
+                <div class="pair-title">BLACKOUT SYSTEM <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="video-box">
+                    <video width="100%" height="100%" controls style="border-radius: 0; object-fit: cover;">
+                        <source src="2026-02-05_15-28-06.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- VIDEO / JOHN'S DINER</div>
+                <div class="pair-title">DOOR SYSTEM <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="video-box">
+                    <video width="100%" height="100%" controls style="border-radius: 0; object-fit: cover;">
+                        <source src="2026-02-05_15-37-29.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
     <section id="page3">
