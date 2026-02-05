@@ -163,17 +163,22 @@
         .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
         .pair-item.expanded .pair-desc { max-height: 400px; opacity: 1; margin-top: 10px; overflow-y: auto; }
 .pair-item.expanded .video-box { 
-    max-height: 235px; /* High enough to contain the height below */
-    height: 235px;     /* Fixed height prevents the 'snap' */
+    max-height: 235px; 
+    height: 235px;    
     opacity: 1; 
     margin-top: 15px; 
     transform: scale(1); 
     border-color: rgba(255, 69, 0, 0.4); 
 }
 .pair-item.expanded .pair-desc img {
-    border-color: var(--acc) !important;
-    box-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
-    transition: border-color 0.4s ease;
+    width: 100%;
+    height: 235px;  
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 10px;
+    border: 1px solid rgba(255, 69, 0, 0.4); 
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.1);
+    transition: all 0.4s ease;
 }
 
         .cinematic-header{margin-bottom:40px;position:relative;z-index:2;width:100%;max-width:1400px}
@@ -326,11 +331,11 @@ return Module</code></pre>
     <div class="data-column">
         <div class="column-header"><span>03 // SHOWCASE</span><span>MEDIA</span></div>
         <div class="column-content">
-           <div class="pair-item" onclick="toggleDropdown(this)">
+         <div class="pair-item" onclick="toggleDropdown(this)">
     <div class="pair-meta">-- IMAGE / JOHN'S DINER</div>
     <div class="pair-title">NAME TAGS <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
     <div class="pair-desc">
-        <img src="b797f81cfa76227f199c51e76f6398dd.png" style="width: 100%; border-radius: 4px; margin-top: 10px; border: 1px solid transparent;">
+        <img src="b797f81cfa76227f199c51e76f6398dd.png">
     </div>
 </div>
             <div class="pair-item" onclick="toggleDropdown(this)">
