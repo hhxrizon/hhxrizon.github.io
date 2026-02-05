@@ -252,9 +252,38 @@
                 <div class="pair-title">System Example</div>
                 <div class="pair-desc" style="max-height: 500px; opacity: 1; margin-top: 10px;">
                     <pre><code class="language-lua">-- Services
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- Variables
+
+local Text = "Hello World!"
+
+-- Events
+
+local EventFolder = ReplicatedStorage.Events
+
+local Event = EventFolder.Event
+
+-- Modules
+
+local ModuleFolder = ReplicatedStorage.Modules
+
+local GameModule = require(ModuleFolder.GameModule)
+
+-- Functions
+
+local function PrintAfterWait()
+
+task.wait(GameModule.TimerLenght)
+
+print(Text)
+
+end
+
 -- Logic
-Event.OnServerEvent:Connect(PrintAfterWait)</code></pre>
+
+Event.OnServerEvent:Connect(PrintAfterWait))</code></pre>
                 </div>
             </div>
         </div>
@@ -264,8 +293,8 @@ Event.OnServerEvent:Connect(PrintAfterWait)</code></pre>
         <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
         <div class="column-content">
             <div class="pair-item" onclick="toggleDropdown(this)">
-                <div class="pair-meta">-- MODULE PREVIEW</div>
-                <div class="pair-title">Code Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-meta">-- CODE PREVIEW</div>
+                <div class="pair-title">Module Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
                     <pre><code class="language-lua">-- Module
 local Module = {
