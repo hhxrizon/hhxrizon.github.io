@@ -119,18 +119,77 @@
         .p3-data-grid{position:absolute;inset:0;background-image: linear-gradient(rgba(255,69,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,69,0,0.03) 1px, transparent 1px);background-size: 100px 100px;perspective: 1000px;}
         .p3-moving-bits{position:absolute;width:100%;height:100%;background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' font-family='monospace' font-size='8' fill='rgba(255,69,0,0.1)'%3E1010%3C/text%3E%3C/svg%3E");animation: p3float 20s linear infinite;}
         
-        .data-column {flex:1;height:auto;min-height:70vh;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;padding:30px;position:relative;transition:0.4s ease;z-index:2;backdrop-filter:blur(5px)}
-        .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
+        
         .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
         .column-content {display:flex;flex-direction:column;gap:20px}
         .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative; user-select: none; outline: none;}
         .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
         .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
         .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
-        
-        .pair-desc {font-size: 13px;color: #888;line-height: 1.5;max-height: 0;overflow: hidden;transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;opacity: 0;}
-        .video-box {width: 100%;height: 140px;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
-        .video-box::before {content:"PENDING";font-family:'Fira Code';font-size:10px;color:var(--acc);opacity:0.5}
+
+/* Fixes horizontal stretching by giving columns a fixed base */
+.data-column {
+    flex: 1;
+    min-width: 0; /* Critical: allows flex child to shrink below content size */
+    max-width: 450px; /* Limits how wide columns can get */
+    height: auto;
+    min-height: 70vh;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    position: relative;
+    transition: 0.4s ease;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+/* Code block formatting */
+.pair-desc pre {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    color: #ccc;
+    background: #050505;
+    padding: 12px;
+    border-radius: 4px;
+    border-left: 2px solid var(--acc);
+    overflow-x: auto; /* Adds scrollbar if code is too long, prevents stretching */
+    white-space: pre; /* Keeps Lua formatting */
+}
+
+/* Video box sizing and "Pending" fallback */
+.pair-item.expanded .video-box { 
+    max-height: 220px; 
+    height: 220px; 
+    opacity: 1; 
+    margin-top: 15px; 
+    transform: scale(1); 
+    border: 1px solid rgba(255,69,0,0.3);
+}
+
+.video-box {
+    width: 100%;
+    height: 0;
+    max-height: 0;
+    opacity: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-box::before {
+    content: "PENDING_ASSET.MP4";
+    font-family: 'Fira Code';
+    font-size: 10px;
+    color: var(--acc);
+    opacity: 0.5;
+    letter-spacing: 2px;
+}
         
         .dropdown-arrow {width: 70px;height: 70px;fill: var(--acc);transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);transform: rotate(-90deg);position: absolute;right: -25px;top: 50%;margin-top: -35px;pointer-events: none;}
         .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
@@ -233,7 +292,7 @@
         </div>
     </section>
 
-    <section id="page2">
+   <section id="page2">
     <div class="hud-visual-elements">
         <div class="p2-neural-bg"></div><div class="p2-synapse-grid"></div><div class="p2-pulse-line"></div>
     </div>
@@ -245,15 +304,15 @@
                 <div class="pair-meta">-- LOGIC / DATASTORES</div>
                 <div class="pair-title">Data Handler <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
-                    <pre style="font-family: 'Fira Code'; font-size: 11px; color: #ccc; background: #000; padding: 10px; border-radius: 4px; overflow-x: auto;">
-local DataStoreService = game:GetService("DataStoreService")
-local PlayerData = DataStoreService:GetDataStore("v1_PlayerData")
+                    <pre>
+local DataStore = game:GetService("DataStoreService")
+local PlayerData = DataStore:GetDataStore("v1")
 
-local function SaveData(player)
-    local success, err = pcall(function()
-        PlayerData:SetAsync(player.UserId, player.Leaderstats.Points.Value)
-    end)
-    if not success then warn(err) end
+-- Core Logic
+local function Save(player)
+    local key = "Player_" .. player.UserId
+    local data = player.leaderstats.Points.Value
+    PlayerData:SetAsync(key, data)
 end</pre>
                 </div>
             </div>
@@ -264,19 +323,19 @@ end</pre>
         <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
         <div class="column-content">
             <div class="pair-item" onclick="toggleDropdown(this)">
-                <div class="pair-meta">-- MODULE / UI ANIMATION</div>
-                <div class="pair-title">Tween Controller <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-meta">-- MODULE / RAYCAST</div>
+                <div class="pair-title">Hitbox Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
-                    <pre style="font-family: 'Fira Code'; font-size: 11px; color: #ccc; background: #000; padding: 10px; border-radius: 4px; overflow-x: auto;">
-local TweenService = game:GetService("TweenService")
-local UIController = {}
+                    <pre>
+local RaycastModule = {}
 
-function UIController:Pop(element)
-    local info = TweenInfo.new(0.3, Enum.EasingStyle.Back)
-    TweenService:Create(element, info, {Size = UDim2.fromScale(1.1, 1.1)}):Play()
+function RaycastModule:Cast(origin, dir)
+    local params = RaycastParams.new()
+    params.FilterType = Enum.RaycastFilterType.Exclude
+    return workspace:Raycast(origin, dir, params)
 end
 
-return UIController</pre>
+return RaycastModule</pre>
                 </div>
             </div>
         </div>
@@ -286,12 +345,11 @@ return UIController</pre>
         <div class="column-header"><span>03 // SHOWCASE</span><span>VIDEOS</span></div>
         <div class="column-content">
             <div class="pair-item" onclick="toggleDropdown(this)">
-                <div class="pair-meta">-- VIDEO / COMBAT SYSTEM</div>
-                <div class="pair-title">Sword System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-meta">-- VIDEO / SHOWCASE</div>
+                <div class="pair-title">Combat System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="video-box">
-                    <video width="100%" height="100%" controls style="object-fit: cover;">
-                        <source src="sword_showcase.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                    <video width="100%" height="100%" controls style="object-fit: cover; position: absolute; top:0; left:0;" onerror="this.style.display='none'">
+                        <source src="combat.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
