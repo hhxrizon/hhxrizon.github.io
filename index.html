@@ -1,524 +1,521 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>hhxrizon | Luau Commissions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Roboto+Condensed:wght@700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Fira+Code:wght@400;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-    <style>
-        @keyframes p3float { from { background-position: 0 0; } to { background-position: -400px 400px; } }
-        @keyframes rotateRing{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-        @keyframes heartbeat{0%{stroke-dashoffset:200}40%{stroke-dashoffset:0}100%{stroke-dashoffset:-200}}
-        @keyframes spinR{from{transform:translate(-50%,-50%) rotateZ(0)}to{transform:translate(-50%,-50%) rotateZ(360deg)}}
-        @keyframes p2float {0%{background-position:0 0}100%{background-position: 600px 300px}}
-        @keyframes p2lineMove {0%, 100%{left:10%; opacity:0} 50%{left:90%; opacity:0.2}}
-        @keyframes p4drift { from { background-position: 0 0; } to { background-position: 500px 1000px; } }
-        @keyframes scanAnim { 0% { top: 0%; } 100% { top: 100%; } }
-        @keyframes signalPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>hhxrizon | Luau Commissions</title>
+<link href="[https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Roboto+Condensed:wght@700&family=Fira+Code:wght@400;600&display=swap](https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Roboto+Condensed:wght@700&family=Fira+Code:wght@400;600&display=swap)" rel="stylesheet">
+<link href="[https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Fira+Code:wght@400;600&family=Rajdhani:wght@600;700&display=swap](https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Fira+Code:wght@400;600&family=Rajdhani:wght@600;700&display=swap)" rel="stylesheet">
+<link href="[https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css](https://www.google.com/search?q=https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css)" rel="stylesheet" />
+<style>
+@keyframes p3float { from { background-position: 0 0; } to { background-position: -400px 400px; } }
+@keyframes rotateRing{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes heartbeat{0%{stroke-dashoffset:200}40%{stroke-dashoffset:0}100%{stroke-dashoffset:-200}}
+@keyframes spinR{from{transform:translate(-50%,-50%) rotateZ(0)}to{transform:translate(-50%,-50%) rotateZ(360deg)}}
+@keyframes p2float {0%{background-position:0 0}100%{background-position: 600px 300px}}
+@keyframes p2lineMove {0%, 100%{left:10%; opacity:0} 50%{left:90%; opacity:0.2}}
+@keyframes p4drift { from { background-position: 0 0; } to { background-position: 500px 1000px; } }
+@keyframes scanAnim { 0% { top: 0%; } 100% { top: 100%; } }
+@keyframes signalPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{--h-h:103px;--bg0:#0f0f0f;--bg1:#141414;--grad:linear-gradient(90deg,#ff8c00 0%,#ff4500 100%);--rev:linear-gradient(90deg,#ff4500 0%,#ff8c00 100%);--btn-h:68px;--sl:68px;--gap:15px;--acc:#ff4500;--rblx:#00e676;--error:#ff4b2b;--pp:#0070ba}
-        
-        body{height:100%;background:var(--bg0);color:#fff;font-family:Montserrat,sans-serif;overflow-x:hidden;scrollbar-width:none;scroll-behavior:smooth}
-        body::-webkit-scrollbar{display:none}
-        body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(255,69,0,.05) 1px,transparent 1px);background-size:40px 40px;z-index:-1}
+```
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--h-h:103px;--bg0:#0f0f0f;--bg1:#141414;--grad:linear-gradient(90deg,#ff8c00 0%,#ff4500 100%);--rev:linear-gradient(90deg,#ff4500 0%,#ff8c00 100%);--btn-h:68px;--sl:68px;--gap:15px;--acc:#ff4500;--rblx:#00e676;--error:#ff4b2b;--pp:#0070ba}
+    
+    body{height:100%;background:var(--bg0);color:#fff;font-family:Montserrat,sans-serif;overflow-x:hidden;scrollbar-width:none;scroll-behavior:smooth}
+    body::-webkit-scrollbar{display:none}
+    body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(255,69,0,.05) 1px,transparent 1px);background-size:40px 40px;z-index:-1}
 
-        .hud-visual-elements{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-        .geo-overlay{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5}
-        .hex-pattern{width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-rule='evenodd' stroke='rgba(255,69,0,0.05)' fill='none'/%3E%3C/svg%3E")}
-        
-        #topbar{position:fixed;top:0;width:100%;height:var(--h-h);z-index:9999;background:rgba(13,13,13,.8);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.05)}
-        .brand-cluster{position:absolute;top:25px;left:25px;display:flex;align-items:center;gap:20px}
-        .title{font-size:38px;font-weight:800;letter-spacing:-2px;line-height:.9}
-        .subtitle{font-size:14px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
-        .brand-divider{width:1px;height:40px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.2),transparent)}
-        
-        .brand-status{display:flex;flex-direction:column;gap:4px}
-        .status-container{display:flex;align-items:center;gap:12px}
-        .status-tag{font-family:'Fira Code';font-size:9px;color:var(--status-clr);background:var(--status-bg);padding:2px 8px;border:1px solid var(--status-clr);text-transform:uppercase;transition:0.3s}
-        .status-label{font-size:9px;color:#444;font-weight:600;text-transform:uppercase;letter-spacing:1px;display:flex;gap:5px;align-items:center}
-        #active-frame-label {color: var(--acc); font-family: 'Fira Code'; font-weight: 800; text-shadow: 0 0 5px var(--acc);}
-        .network-node {display: flex; flex-direction: column; gap: 4px; padding-left: 10px;}
-        .network-bars {display: flex; align-items: flex-end; gap: 2px; height: 12px;}
-        .bar {width: 3px; background: #333; transition: 0.3s;}
-        .bar.active {background: var(--rblx); box-shadow: 0 0 5px var(--rblx);}
-        .latency-text {font-family: 'Fira Code'; font-size: 8px; color: #555; text-transform: uppercase;}
-        #ms-ping {color: var(--rblx); margin-left: 4px; font-weight: 600;}
+    .hud-visual-elements{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .geo-overlay{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5}
+    .hex-pattern{width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='[http://www.w3.org/2000/svg'%3E%3Cpath](http://www.w3.org/2000/svg'%3E%3Cpath) d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-rule='evenodd' stroke='rgba(255,69,0,0.05)' fill='none'/%3E%3C/svg%3E")}
+    
+    #topbar{position:fixed;top:0;width:100%;height:var(--h-h);z-index:9999;background:rgba(13,13,13,.8);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.05)}
+    .brand-cluster{position:absolute;top:25px;left:25px;display:flex;align-items:center;gap:20px}
+    .title{font-size:38px;font-weight:800;letter-spacing:-2px;line-height:.9}
+    .subtitle{font-size:14px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+    .brand-divider{width:1px;height:40px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.2),transparent)}
+    
+    .brand-status{display:flex;flex-direction:column;gap:4px}
+    .status-container{display:flex;align-items:center;gap:12px}
+    .status-tag{font-family:'Fira Code';font-size:9px;color:var(--status-clr);background:var(--status-bg);padding:2px 8px;border:1px solid var(--status-clr);text-transform:uppercase;transition:0.3s}
+    .status-label{font-size:9px;color:#444;font-weight:600;text-transform:uppercase;letter-spacing:1px;display:flex;gap:5px;align-items:center}
+    #active-frame-label {color: var(--acc); font-family: 'Fira Code'; font-weight: 800; text-shadow: 0 0 5px var(--acc);}
+    .network-node {display: flex; flex-direction: column; gap: 4px; padding-left: 10px;}
+    .network-bars {display: flex; align-items: flex-end; gap: 2px; height: 12px;}
+    .bar {width: 3px; background: #333; transition: 0.3s;}
+    .bar.active {background: var(--rblx); box-shadow: 0 0 5px var(--rblx);}
+    .latency-text {font-family: 'Fira Code'; font-size: 8px; color: #555; text-transform: uppercase;}
+    #ms-ping {color: var(--rblx); margin-left: 4px; font-weight: 600;}
 
-        .heartbeat-box{width:60px;height:20px;position:relative;overflow:hidden;opacity:0.8}
-        .heartbeat-box svg{width:100%;height:100%}
-        .heartbeat-box path{fill:none;stroke:var(--status-clr);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200}
-        .pulse-active path{animation:heartbeat 2s linear infinite}
-        
-        .line-horizontal{position:absolute;top:102px;width:100%;height:1.5px;background:#fff;opacity:.2}
-        .line-diagonal{position:absolute;top:51px;left:50%;width:146px;height:1.5px;background:#fff;opacity:.2;transform:rotate(-45deg) translateX(-50%);transform-origin:left center}
-        .top-right-image{position:absolute;top:0;right:0;width:calc(50% + 51.5px);height:var(--h-h);overflow:hidden;clip-path:polygon(103px 0,100% 0,100% 100%,0 100%)}
-        .top-right-image img{width:100%;height:100%;object-fit:cover;opacity:.15;filter:grayscale(1)}
-        .top-right-buttons {
-            position: absolute;
-            top: 15px;
-            left: calc(50% + var(--gap));
-            right: var(--gap);
-            height: var(--btn-h);
-            display: flex;
-            gap: calc(var(--gap) - var(--sl));
-            z-index: 11;
-        }
+    .heartbeat-box{width:60px;height:20px;position:relative;overflow:hidden;opacity:0.8}
+    .heartbeat-box svg{width:100%;height:100%}
+    .heartbeat-box path{fill:none;stroke:var(--status-clr);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200}
+    .pulse-active path{animation:heartbeat 2s linear infinite}
+    
+    .line-horizontal{position:absolute;top:102px;width:100%;height:1.5px;background:#fff;opacity:.2}
+    .line-diagonal{position:absolute;top:51px;left:50%;width:146px;height:1.5px;background:#fff;opacity:.2;transform:rotate(-45deg) translateX(-50%);transform-origin:left center}
+    .top-right-image{position:absolute;top:0;right:0;width:calc(50% + 51.5px);height:var(--h-h);overflow:hidden;clip-path:polygon(103px 0,100% 0,100% 100%,0 100%)}
+    .top-right-image img{width:100%;height:100%;object-fit:cover;opacity:.15;filter:grayscale(1)}
+    .top-right-buttons {
+        position: absolute;
+        top: 15px;
+        left: calc(50% + var(--gap));
+        right: var(--gap);
+        height: var(--btn-h);
+        display: flex;
+        gap: calc(var(--gap) - var(--sl));
+        z-index: 11;
+    }
 
-        .top-right-buttons button {
-            flex: 1;
-            height: var(--btn-h);
-            background: rgba(255, 255, 255, .15);
-            color: #fff;
-            border: 2.5px solid rgba(255, 255, 255, .2);
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
-            font-size: 17px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            text-transform: uppercase;
-            clip-path: polygon(var(--sl) 0, 100% 0, calc(100% - var(--sl)) 100%, 0 100%);
-            transition: .2s;
-            outline: none;
-        }
-        .top-right-buttons button:hover{background:#fff;color:#000}
-        .top-right-buttons button:last-child{clip-path:polygon(var(--sl) 0,100% 0,100% 100%,0 100%);border:3px solid;border-image:var(--rev) 1;padding-left:calc(var(--sl) / 2);font-weight:800}
-        
-        section{min-height:100vh;width:100vw;display:flex;padding:140px 100px 60px 100px;position:relative;overflow:hidden}
-        #page1{background: #0d0d0d;align-items:center;justify-content:space-between}
-        .p1-minimal-bg {position: absolute;inset: 0;background: radial-gradient(circle at 30% 50%, rgba(255,69,0,0.04) 0%, transparent 50%);z-index: 0;}
-        .p1-dot-matrix {position: absolute;inset: 0;background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);background-size: 30px 30px;mask-image: linear-gradient(to bottom, transparent, black, transparent);}
-        .p1-accents::before, .p1-accents::after {content: "";position: absolute;width: 100px;height: 100px;border: 1px solid rgba(255,69,0,0.1);opacity: 0.5;}
-        .p1-accents::before { top: 150px; left: 50px; border-right: 0; border-bottom: 0; }
-        .p1-accents::after { bottom: 50px; right: 50px; border-left: 0; border-top: 0; }
-        .main-info{max-width:850px;z-index:2}
-        .main-info h2{font-size:95px;font-weight:800;line-height:.82;margin-bottom:35px;text-transform:uppercase;letter-spacing:-4px}
-        .main-info span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .intro-text{font-size:24px;line-height:1.4;border-left:4px solid var(--acc);padding-left:30px;margin-bottom:40px;max-width:650px}
-        .perks-row{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 60px;max-width:750px}
-        .perk-item strong{font-size:18px;text-transform:uppercase;display:block;margin-bottom:8px}
-        .perk-item p{font-size:14px;color:#888;line-height:1.5}
-        .showcase-right{flex:1;height:60vh;display:flex;align-items:center;justify-content:flex-end;perspective:1000px}
-        .visual-container{width:450px;height:450px;position:relative;transform-style:preserve-3d;transform:rotateX(20deg) rotateY(-20deg)}
-        .iso-box{position:absolute;top:50%;left:50%;width:200px;height:200px;transform:translate(-50%,-50%);border:2px solid var(--acc);background:rgba(255,69,0,.05);box-shadow:0 0 50px rgba(255,69,0,.2)}
-        .wire-ring{position:absolute;top:50%;left:50%;border:1px solid rgba(255,255,255,0.1);transform-style:preserve-3d}
-        .ring-1{width:350px;height:350px;transform:translate(-50%,-50%) rotateZ(45deg);animation:spinR 10s linear infinite}
-        .ring-2{width:420px;height:420px;transform:translate(-50%,-50%) rotateZ(-45deg);animation:spinR 15s linear infinite reverse}
-        .tech-line{position:absolute;background:var(--grad);opacity:.6}
-        .line-v{width:1px;height:100%;top:0}
-        .line-h{height:1px;width:100%;left:0}
-        .corner-tag{position:absolute;font-family:'Fira Code';font-size:10px;color:var(--acc);text-transform:uppercase}
-        
-        #page2{flex-direction:row;justify-content:center;align-items:center;gap:30px;padding:140px 50px 60px 50px;background:#0a0a0a}
-        .p2-neural-bg {position: absolute;inset: 0;background: radial-gradient(circle at 20% 30%, rgba(255,69,0,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,69,0,0.08) 0%, transparent 40%);opacity: 0.6;}
-        .p2-synapse-grid {position: absolute;inset: 0;background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,69,0,0.1)' stroke-width='0.5'%3E%3Ccircle cx='100' cy='100' r='2' fill='rgba(255,69,0,0.2)'/%3E%3Cpath d='M100 100 L180 150 M100 100 L20 40 M100 100 L150 20'/%3E%3C/g%3E%3C/svg%3E");background-size: 300px 300px;animation: p2float 40s linear infinite;}
-        .p2-pulse-line {position: absolute;width: 2px;height: 100%;left: 50%;background: linear-gradient(to bottom, transparent, var(--acc), transparent);opacity: 0.1;box-shadow: 0 0 20px var(--acc);animation: p2lineMove 8s ease-in-out infinite;}
-        
-        #page3{background:var(--bg1);flex-direction:column;justify-content:flex-start;align-items:center}
-        .p3-data-grid{position:absolute;inset:0;background-image: linear-gradient(rgba(255,69,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,69,0,0.03) 1px, transparent 1px);background-size: 100px 100px;perspective: 1000px;}
-        .p3-moving-bits{position:absolute;width:100%;height:100%;background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' font-family='monospace' font-size='8' fill='rgba(255,69,0,0.1)'%3E1010%3C/text%3E%3C/svg%3E");animation: p3float 20s linear infinite;}
-        
-        .data-column {flex:1;height:auto;min-height:70vh;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;padding:30px;position:relative;transition:0.4s ease;z-index:2;backdrop-filter:blur(5px)}
-        .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
-        .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
-        .column-content {display:flex;flex-direction:column;gap:20px}
-        .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative; user-select: none; outline: none;}
-        .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
-        .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
-        .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
-        
-        .pair-desc {font-size: 13px;color: #888;line-height: 1.5;max-height: 0;overflow: hidden;transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;opacity: 0;}
-        .video-box {width: 100%;height: auto;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
-        .video-box video { width: 100%; height: auto; display: block; }
+    .top-right-buttons button {
+        flex: 1;
+        height: var(--btn-h);
+        background: rgba(255, 255, 255, .15);
+        color: #fff;
+        border: 2.5px solid rgba(255, 255, 255, .2);
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        text-transform: uppercase;
+        clip-path: polygon(var(--sl) 0, 100% 0, calc(100% - var(--sl)) 100%, 0 100%);
+        transition: .2s;
+        outline: none;
+    }
+    .top-right-buttons button:hover{background:#fff;color:#000}
+    .top-right-buttons button:last-child{clip-path:polygon(var(--sl) 0,100% 0,100% 100%,0 100%);border:3px solid;border-image:var(--rev) 1;padding-left:calc(var(--sl) / 2);font-weight:800}
+    
+    section{min-height:100vh;width:100vw;display:flex;padding:140px 100px 60px 100px;position:relative;overflow:hidden}
+    #page1{background: #0d0d0d;align-items:center;justify-content:space-between}
+    .p1-minimal-bg {position: absolute;inset: 0;background: radial-gradient(circle at 30% 50%, rgba(255,69,0,0.04) 0%, transparent 50%);z-index: 0;}
+    .p1-dot-matrix {position: absolute;inset: 0;background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);background-size: 30px 30px;mask-image: linear-gradient(to bottom, transparent, black, transparent);}
+    .p1-accents::before, .p1-accents::after {content: "";position: absolute;width: 100px;height: 100px;border: 1px solid rgba(255,69,0,0.1);opacity: 0.5;}
+    .p1-accents::before { top: 150px; left: 50px; border-right: 0; border-bottom: 0; }
+    .p1-accents::after { bottom: 50px; right: 50px; border-left: 0; border-top: 0; }
+    .main-info{max-width:850px;z-index:2}
+    .main-info h2{font-size:95px;font-weight:800;line-height:.82;margin-bottom:35px;text-transform:uppercase;letter-spacing:-4px}
+    .main-info span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .intro-text{font-size:24px;line-height:1.4;border-left:4px solid var(--acc);padding-left:30px;margin-bottom:40px;max-width:650px}
+    .perks-row{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 60px;max-width:750px}
+    .perk-item strong{font-size:18px;text-transform:uppercase;display:block;margin-bottom:8px}
+    .perk-item p{font-size:14px;color:#888;line-height:1.5}
+    .showcase-right{flex:1;height:60vh;display:flex;align-items:center;justify-content:flex-end;perspective:1000px}
+    .visual-container{width:450px;height:450px;position:relative;transform-style:preserve-3d;transform:rotateX(20deg) rotateY(-20deg)}
+    .iso-box{position:absolute;top:50%;left:50%;width:200px;height:200px;transform:translate(-50%,-50%);border:2px solid var(--acc);background:rgba(255,69,0,.05);box-shadow:0 0 50px rgba(255,69,0,.2)}
+    .wire-ring{position:absolute;top:50%;left:50%;border:1px solid rgba(255,255,255,0.1);transform-style:preserve-3d}
+    .ring-1{width:350px;height:350px;transform:translate(-50%,-50%) rotateZ(45deg);animation:spinR 10s linear infinite}
+    .ring-2{width:420px;height:420px;transform:translate(-50%,-50%) rotateZ(-45deg);animation:spinR 15s linear infinite reverse}
+    .tech-line{position:absolute;background:var(--grad);opacity:.6}
+    .line-v{width:1px;height:100%;top:0}
+    .line-h{height:1px;width:100%;left:0}
+    .corner-tag{position:absolute;font-family:'Fira Code';font-size:10px;color:var(--acc);text-transform:uppercase}
+    
+    #page2{flex-direction:row;justify-content:center;align-items:center;gap:30px;padding:140px 50px 60px 50px;background:#0a0a0a}
+    .p2-neural-bg {position: absolute;inset: 0;background: radial-gradient(circle at 20% 30%, rgba(255,69,0,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,69,0,0.08) 0%, transparent 40%);opacity: 0.6;}
+    .p2-synapse-grid {position: absolute;inset: 0;background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='[http://www.w3.org/2000/svg'%3E%3Cg](http://www.w3.org/2000/svg'%3E%3Cg) fill='none' stroke='rgba(255,69,0,0.1)' stroke-width='0.5'%3E%3Ccircle cx='100' cy='100' r='2' fill='rgba(255,69,0,0.2)'/%3E%3Cpath d='M100 100 L180 150 M100 100 L20 40 M100 100 L150 20'/%3E%3C/g%3E%3C/svg%3E");background-size: 300px 300px;animation: p2float 40s linear infinite;}
+    .p2-pulse-line {position: absolute;width: 2px;height: 100%;left: 50%;background: linear-gradient(to bottom, transparent, var(--acc), transparent);opacity: 0.1;box-shadow: 0 0 20px var(--acc);animation: p2lineMove 8s ease-in-out infinite;}
+    
+    #page3{background:var(--bg1);flex-direction:column;justify-content:flex-start;align-items:center}
+    .p3-data-grid{position:absolute;inset:0;background-image: linear-gradient(rgba(255,69,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,69,0,0.03) 1px, transparent 1px);background-size: 100px 100px;perspective: 1000px;}
+    .p3-moving-bits{position:absolute;width:100%;height:100%;background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='[http://www.w3.org/2000/svg'%3E%3Ctext](http://www.w3.org/2000/svg'%3E%3Ctext) x='0' y='20' font-family='monospace' font-size='8' fill='rgba(255,69,0,0.1)'%3E1010%3C/text%3E%3C/svg%3E");animation: p3float 20s linear infinite;}
+    
+    .data-column {flex:1;height:auto;min-height:70vh;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;padding:30px;position:relative;transition:0.4s ease;z-index:2;backdrop-filter:blur(5px)}
+    .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
+    .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
+    .column-content {display:flex;flex-direction:column;gap:20px}
+    .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative; user-select: none; outline: none;}
+    .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
+    .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
+    .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
+    
+    .code-box {width: 100%; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease; margin-top: 0; font-family: 'Fira Code', monospace; font-size: 12px;}
+    .code-box pre { margin: 0; border-radius: 4px; background: #080808 !important; }
+    .video-box {width: 100%;height: 140px;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
+    .video-box iframe, .video-box video { width: 100%; height: 100%; border: none; }
+    
+    .dropdown-arrow {width: 70px;height: 70px;fill: var(--acc);transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);transform: rotate(-90deg);position: absolute;right: -25px;top: 50%;margin-top: -35px;pointer-events: none;}
+    .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
+    .pair-item.expanded .code-box { max-height: 400px; opacity: 1; margin-top: 15px; overflow-y: auto; }
+    .pair-item.expanded .video-box { max-height: 200px; opacity: 1; margin-top: 15px; transform: scale(1); border-color: #222; }
 
-        .code-box {width: 100%;max-height: 0;opacity: 0;margin-top: 0;background: #1e1e1e;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
-        .code-box pre { margin: 0; padding: 15px; font-size: 11px; max-height: 250px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--acc) transparent; }
-        .code-box pre::-webkit-scrollbar { width: 4px; }
-        .code-box pre::-webkit-scrollbar-thumb { background: var(--acc); }
+    .cinematic-header{margin-bottom:40px;position:relative;z-index:2;width:100%;max-width:1400px}
+    .cinematic-header h2{font-size:110px;font-weight:800;letter-spacing:-5px;line-height:.9;text-transform:uppercase}
+    .cinematic-header span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    
+    .wide-grid-container{width:100%;max-width:1400px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:2}
+    .contact-card {position: relative;height: 350px;background: #111;border: 1px solid rgba(255,255,255,0.08);padding: 30px;display: flex;flex-direction: column;transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);cursor: pointer;overflow: hidden;backdrop-filter: blur(10px);}
+    .contact-card::before {content: "";position: absolute;top: 0;left: -100%;width: 100%;height: 2px;background: var(--grad);transition: 0.5s;}
+    .contact-card:hover::before { left: 0; }
+    .contact-card:hover {transform: translateY(-8px);border-color: rgba(255,69,0,0.4);box-shadow: 0 20px 40px rgba(0,0,0,0.4);}
 
-        .dropdown-arrow {width: 70px;height: 70px;fill: var(--acc);transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);transform: rotate(-90deg);position: absolute;right: -25px;top: 50%;margin-top: -35px;pointer-events: none;}
-        .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
-        .pair-item.expanded .pair-desc { max-height: 300px; opacity: 1; margin-top: 10px; }
-        .pair-item.expanded .video-box { max-height: 300px; opacity: 1; margin-top: 15px; transform: scale(1); border-color: #222; }
-        .pair-item.expanded .code-box { max-height: 300px; opacity: 1; margin-top: 15px; transform: scale(1); border-color: #222; }
+    .card-header-block {display: flex;justify-content: space-between;align-items: flex-start;margin-bottom: 25px;z-index: 2;}
+    .card-tag {font-family: 'Fira Code';font-size: 10px;background: var(--acc);color: #000;padding: 4px 20px 4px 8px;font-weight: 800;letter-spacing: 1px;text-transform: uppercase;clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);}
+    .card-id-num {font-family: 'Fira Code';font-size: 24px;font-weight: 800;opacity: 0.1;line-height: 1;}
+    .card-body {flex-grow: 1;z-index: 2;}
+    .card-title {font-size: 34px;font-weight: 800;text-transform: uppercase;letter-spacing: -1px;margin-bottom: 15px;color: #fff;}
+    .card-value {font-size: 15px;color: #777;line-height: 1.6;font-family: 'Roboto Condensed';}
+    .card-footer {margin-top: auto;padding-top: 20px;border-top: 1px solid rgba(255,255,255,0.05);display: flex;justify-content: space-between;align-items: center;z-index: 2;}
+    .footer-meta {font-family: 'Fira Code';font-size: 9px;color: #444;text-transform: uppercase;}
 
-        .cinematic-header{margin-bottom:40px;position:relative;z-index:2;width:100%;max-width:1400px}
-        .cinematic-header h2{font-size:110px;font-weight:800;letter-spacing:-5px;line-height:.9;text-transform:uppercase}
-        .cinematic-header span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        
-        .wide-grid-container{width:100%;max-width:1400px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:2}
-        .contact-card {position: relative;height: 350px;background: #111;border: 1px solid rgba(255,255,255,0.08);padding: 30px;display: flex;flex-direction: column;transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);cursor: pointer;overflow: hidden;backdrop-filter: blur(10px);}
-        .contact-card::before {content: "";position: absolute;top: 0;left: -100%;width: 100%;height: 2px;background: var(--grad);transition: 0.5s;}
-        .contact-card:hover::before { left: 0; }
-        .contact-card:hover {transform: translateY(-8px);border-color: rgba(255,69,0,0.4);box-shadow: 0 20px 40px rgba(0,0,0,0.4);}
+    .scan-line {position: absolute;width: 100%;height: 1px;background: rgba(255,69,0,0.2);top: 0;left: 0;pointer-events: none;z-index: 3;opacity: 0;}
+    .contact-card:hover .scan-line {animation: scanAnim 2s linear infinite;opacity: 1;}
 
-        .card-header-block {display: flex;justify-content: space-between;align-items: flex-start;margin-bottom: 25px;z-index: 2;}
-        .card-tag {font-family: 'Fira Code';font-size: 10px;background: var(--acc);color: #000;padding: 4px 20px 4px 8px;font-weight: 800;letter-spacing: 1px;text-transform: uppercase;clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);}
-        .card-id-num {font-family: 'Fira Code';font-size: 24px;font-weight: 800;opacity: 0.1;line-height: 1;}
-        .card-body {flex-grow: 1;z-index: 2;}
-        .card-title {font-size: 34px;font-weight: 800;text-transform: uppercase;letter-spacing: -1px;margin-bottom: 15px;color: #fff;}
-        .card-value {font-size: 15px;color: #777;line-height: 1.6;font-family: 'Roboto Condensed';}
-        .card-footer {margin-top: auto;padding-top: 20px;border-top: 1px solid rgba(255,255,255,0.05);display: flex;justify-content: space-between;align-items: center;z-index: 2;}
-        .footer-meta {font-family: 'Fira Code';font-size: 9px;color: #444;text-transform: uppercase;}
+    .delivery-wide {width:100%;max-width:1400px;height:160px;margin-top:30px;flex-direction:row !important;align-items:center;gap:60px;}
+    
+    #toast-container{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:10000;pointer-events:none}
+    .toast{background:#1a1a1a;border:1px solid var(--acc);font-family:'Fira Code';padding:15px 30px;font-size:12px;text-transform:uppercase;margin-top:10px;transform:translateY(100px);opacity:0;transition:.4s}
+    .toast.show{transform:translateY(0);opacity:1}
 
-        .scan-line {position: absolute;width: 100%;height: 1px;background: rgba(255,69,0,0.2);top: 0;left: 0;pointer-events: none;z-index: 3;opacity: 0;}
-        .contact-card:hover .scan-line {animation: scanAnim 2s linear infinite;opacity: 1;}
+    #page4{background:#080808;flex-direction:column; border-top: 1px solid rgba(255,69,0,0.1); padding: 140px 100px 100px 100px; align-items: center; justify-content: center;}
+    .p4-digital-horizon {position: absolute;inset: 0;background: radial-gradient(circle at 50% 100%, rgba(255,69,0,0.1) 0%, transparent 60%);overflow: hidden;}
+    .p4-particles {position: absolute;inset: 0;background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='[http://www.w3.org/2000/svg'%3E%3Ctext](http://www.w3.org/2000/svg'%3E%3Ctext) x='10' y='30' font-family='Fira Code' font-size='6' fill='rgba(255,69,0,0.1)'%3Efunction%3C/text%3E%3Ctext x='50' y='80' font-family='Fira Code' font-size='5' fill='rgba(255,69,0,0.08)'%3Elocal%3C/text%3E%3C/svg%3E");background-size: 250px 250px;animation: p4drift 60s linear infinite;}
+    
+    .contact-spec-row { width: 100%; max-width: 1400px; display: flex; gap: 60px; margin-bottom: 50px; position: relative; z-index: 2; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px;}
+    .spec-item { display: flex; flex-direction: column; gap: 8px; }
+    .spec-label { font-family: 'Fira Code'; font-size: 11px; color: var(--acc); text-transform: uppercase; letter-spacing: 2px; }
+    .spec-value { font-size: 24px; font-weight: 700; color: #fff; }
+    .spec-value span { color: #555; font-size: 16px; font-weight: 400; margin-left: 5px; }
+    
+</style>
 
-        .delivery-wide {width:100%;max-width:1400px;height:160px;margin-top:30px;flex-direction:row !important;align-items:center;gap:60px;}
-        
-        #toast-container{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:10000;pointer-events:none}
-        .toast{background:#1a1a1a;border:1px solid var(--acc);font-family:'Fira Code';padding:15px 30px;font-size:12px;text-transform:uppercase;margin-top:10px;transform:translateY(100px);opacity:0;transition:.4s}
-        .toast.show{transform:translateY(0);opacity:1}
+```
 
-        #page4{background:#080808;flex-direction:column; border-top: 1px solid rgba(255,69,0,0.1); padding: 140px 100px 100px 100px; align-items: center; justify-content: center;}
-        .p4-digital-horizon {position: absolute;inset: 0;background: radial-gradient(circle at 50% 100%, rgba(255,69,0,0.1) 0%, transparent 60%);overflow: hidden;}
-        .p4-particles {position: absolute;inset: 0;background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-family='Fira Code' font-size='6' fill='rgba(255,69,0,0.1)'%3Efunction%3C/text%3E%3Ctext x='50' y='80' font-family='Fira Code' font-size='5' fill='rgba(255,69,0,0.08)'%3Elocal%3C/text%3E%3C/svg%3E");background-size: 250px 250px;animation: p4drift 60s linear infinite;}
-        
-        .contact-spec-row { width: 100%; max-width: 1400px; display: flex; gap: 60px; margin-bottom: 50px; position: relative; z-index: 2; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px;}
-        .spec-item { display: flex; flex-direction: column; gap: 8px; }
-        .spec-label { font-family: 'Fira Code'; font-size: 11px; color: var(--acc); text-transform: uppercase; letter-spacing: 2px; }
-        .spec-value { font-size: 24px; font-weight: 700; color: #fff; }
-        .spec-value span { color: #555; font-size: 16px; font-weight: 400; margin-left: 5px; }
-        
-    </style>
 </head>
 <body>
-    <div class="geo-overlay"><div class="hex-pattern"></div></div>
-    <nav id="topbar">
-        <div class="brand-cluster">
-            <div class="brand-text"><div class="title">hhxrizon</div><div class="subtitle">Luau Development</div></div>
-            <div class="brand-divider"></div>
-            <div class="brand-status">
-                <span class="status-label">Availability / <span id="active-frame-label">PAGE_01</span></span>
-                <div class="status-container">
-                    <span class="status-tag" id="availability-status">Status: Active</span>
-                    <div class="heartbeat-box" id="heartbeat-box"><svg viewBox="0 0 100 20"><path d="M0 10 H30 L35 2 L45 18 L50 10 H100"/></svg></div>
-                </div>
+<div class="geo-overlay"><div class="hex-pattern"></div></div>
+<nav id="topbar">
+<div class="brand-cluster">
+<div class="brand-text"><div class="title">hhxrizon</div><div class="subtitle">Luau Development</div></div>
+<div class="brand-divider"></div>
+<div class="brand-status">
+<span class="status-label">Availability / <span id="active-frame-label">PAGE_01</span></span>
+<div class="status-container">
+<span class="status-tag" id="availability-status">Status: Active</span>
+<div class="heartbeat-box" id="heartbeat-box"><svg viewBox="0 0 100 20"><path d="M0 10 H30 L35 2 L45 18 L50 10 H100"/></svg></div>
+</div>
+</div>
+<div class="brand-divider"></div>
+<div class="network-node">
+<div class="network-bars">
+<div class="bar active" style="height: 4px;"></div>
+<div class="bar active" style="height: 7px;"></div>
+<div class="bar active" style="height: 10px;"></div>
+<div class="bar active" style="height: 12px; animation: signalPulse 1s infinite alternate"></div>
+</div>
+<div class="latency-text">Link Latency: <span id="ms-ping">24ms</span></div>
+</div>
+</div>
+<div class="line-horizontal"></div><div class="line-diagonal"></div>
+<div class="top-right-image"><img src="DSC_00513.jpg"></div>
+<div class="top-right-buttons">
+<button onclick="sTP(1)">About</button><button onclick="sTP(2)">Examples</button><button onclick="sTP(3)">Process</button><button onclick="sTP(4)">Contact</button>
+</div>
+</nav>
+
+```
+<div id="toast-container"></div>
+
+<section id="page1">
+    <div class="p1-minimal-bg"></div><div class="p1-dot-matrix"></div><div class="p1-accents"></div>
+    <div class="main-info">
+        <h2>I AM<br><span>HHXRIZON</span></h2>
+        <div class="intro-text">I specialize in clean, modular Luau development. My systems are built to be easily navigated and modified.</div>
+        <div class="perks-row">
+            <div class="perk-item"><strong>01 // Experience</strong><p>Over 2.5 years of experience in Luau, creating complex and efficient game systems.</p></div>
+            <div class="perk-item"><strong>02 // Scheduling</strong><p>Work on your time. My flexible schedule ensures fast responses and availability.</p></div>
+            <div class="perk-item"><strong>03 // Reliability</strong><p>If you encounter a bug post-payment, I'll fix it for free, no questions asked.</p></div>
+            <div class="perk-item"><strong>04 // Customizability</strong><p>I script using modules, making every system easy to tweak to your liking.</p></div>
+        </div>
+    </div>
+    <div class="showcase-right">
+        <div class="visual-container">
+            <div class="wire-ring ring-1"></div><div class="wire-ring ring-2"></div>
+            <div class="iso-box">
+                <div class="tech-line line-v" style="left:20%"></div><div class="tech-line line-v" style="left:80%"></div><div class="tech-line line-h" style="top:50%"></div>
+                <div class="corner-tag" style="top:10px;left:10px">SYSTEM_CORE</div><div class="corner-tag" style="bottom:10px;right:10px">ID: HX-01</div>
             </div>
-            <div class="brand-divider"></div>
-            <div class="network-node">
-                <div class="network-bars">
-                    <div class="bar active" style="height: 4px;"></div>
-                    <div class="bar active" style="height: 7px;"></div>
-                    <div class="bar active" style="height: 10px;"></div>
-                    <div class="bar active" style="height: 12px; animation: signalPulse 1s infinite alternate"></div>
-                </div>
-                <div class="latency-text">Link Latency: <span id="ms-ping">24ms</span></div>
+        </div>
+    </div>
+</section>
+
+<section id="page2">
+    <div class="hud-visual-elements">
+        <div class="p2-neural-bg"></div><div class="p2-synapse-grid"></div><div class="p2-pulse-line"></div>
+    </div>
+    <div class="data-column">
+        <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
+        <div class="column-content">
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- LOGIC</div>
+                <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="code-box"><pre><code class="language-lua">print("Example Code Here")</code></pre></div>
+            </div>
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- LOGIC</div>
+                <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="code-box"><pre><code class="language-lua">-- Add your script here</code></pre></div>
             </div>
         </div>
-        <div class="line-horizontal"></div><div class="line-diagonal"></div>
-        <div class="top-right-image"><img src="DSC_00513.jpg"></div>
-        <div class="top-right-buttons">
-            <button onclick="sTP(1)">About</button><button onclick="sTP(2)">Examples</button><button onclick="sTP(3)">Process</button><button onclick="sTP(4)">Contact</button>
-        </div>
-    </nav>
-
-    <div id="toast-container"></div>
-
-    <section id="page1">
-        <div class="p1-minimal-bg"></div><div class="p1-dot-matrix"></div><div class="p1-accents"></div>
-        <div class="main-info">
-            <h2>I AM<br><span>HHXRIZON</span></h2>
-            <div class="intro-text">I specialize in clean, modular Luau development. My systems are built to be easily navigated and modified.</div>
-            <div class="perks-row">
-                <div class="perk-item"><strong>01 // Experience</strong><p>Over 2.5 years of experience in Luau, creating complex and efficient game systems.</p></div>
-                <div class="perk-item"><strong>02 // Scheduling</strong><p>Work on your time. My flexible schedule ensures fast responses and availability.</p></div>
-                <div class="perk-item"><strong>03 // Reliability</strong><p>If you encounter a bug post-payment, I'll fix it for free, no questions asked.</p></div>
-                <div class="perk-item)<strong>04 // Customizability</strong><p>I script using modules, making every system easy to tweak to your liking.</p></div>
+    </div>
+    <div class="data-column">
+        <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
+        <div class="column-content">
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- MODULE</div>
+                <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="code-box"><pre><code class="language-lua">local Module = {} return Module</code></pre></div>
+            </div>
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- MODULE</div>
+                <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="code-box"><pre><code class="language-lua">-- Add your module here</code></pre></div>
             </div>
         </div>
-        <div class="showcase-right">
-            <div class="visual-container">
-                <div class="wire-ring ring-1"></div><div class="wire-ring ring-2"></div>
-                <div class="iso-box">
-                    <div class="tech-line line-v" style="left:20%"></div><div class="tech-line line-v" style="left:80%"></div><div class="tech-line line-h" style="top:50%"></div>
-                    <div class="corner-tag" style="top:10px;left:10px">SYSTEM_CORE</div><div class="corner-tag" style="bottom:10px;right:10px">ID: HX-01</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="page2">
-        <div class="hud-visual-elements">
-            <div class="p2-neural-bg"></div><div class="p2-synapse-grid"></div><div class="p2-pulse-line"></div>
-        </div>
-        <div class="data-column">
-            <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
-            <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc"></div>
-                    <div class="code-box">
-                        <pre><code class="language-lua">local Players = game:GetService("Players")
-
-local function onPlayerAdded(player)
-    print(player.Name .. " has entered the horizon.")
-end
-
-Players.PlayerAdded:Connect(onPlayerAdded)</code></pre>
+    </div>
+    <div class="data-column">
+        <div class="column-header"><span>03 // SHOWCASE</span><span>VIDEOS</span></div>
+        <div class="column-content">
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- VIDEO</div>
+                <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="video-box">
                     </div>
-                </div>
             </div>
-        </div>
-        <div class="data-column">
-            <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
-            <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- MODULE</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc"></div>
-                    <div class="code-box">
-                        <pre><code class="language-lua">local Utility = {}
-
-function Utility.Lerp(a, b, t)
-    return a + (b - a) * t
-end
-
-return Utility</code></pre>
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- VIDEO</div>
+                <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="video-box">
                     </div>
-                </div>
             </div>
         </div>
-        <div class="data-column">
-            <div class="column-header"><span>03 // SHOWCASE</span><span>VIDEOS</span></div>
-            <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- VIDEO</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Visual demonstration of dynamic systems in action.</div>
-                    <div class="video-box">
-                        <video controls loop muted>
-                            <source src="your-video-url.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section id="page3">
-        <div class="hud-visual-elements">
-            <div class="p3-data-grid"></div><div class="p3-moving-bits"></div>
-        </div>
-        <div class="cinematic-header"><h2>MY<br><span>PROCESS</span></h2></div>
-        <div class="wide-grid-container">
-            <div class="contact-card">
-                <div class="scan-line"></div>
-                <div class="card-header-block">
-                    <div class="card-tag">Phase // 01</div>
-                    <div class="card-id-num">01</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Concept</div>
-                    <div class="card-value">Discussing what you need scripted, payment and customizability.</div>
-                </div>
-                <div class="card-footer">
-                    <div class="footer-meta">X: 102.5 // Y: 44.0</div>
-                </div>
-            </div>
-            <div class="contact-card">
-                <div class="scan-line"></div>
-                <div class="card-header-block">
-                    <div class="card-tag">Phase // 02</div>
-                    <div class="card-id-num">02</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Scripting</div>
-                    <div class="card-value">Making your required system and optimizing it.</div>
-                </div>
-                <div class="card-footer">
-                    <div class="footer-meta">X: 205.1 // Y: 44.0</div>
-                </div>
-            </div>
-            <div class="contact-card">
-                <div class="scan-line"></div>
-                <div class="card-header-block">
-                    <div class="card-tag">Phase // 03</div>
-                    <div class="card-id-num">03</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Refinement</div>
-                    <div class="card-value">Testing the system and taking feedback from you.</div>
-                </div>
-                <div class="card-footer">
-                    <div class="footer-meta">X: 308.9 // Y: 44.0</div>
-                </div>
-            </div>
-        </div>
-        <div class="contact-card delivery-wide">
+<section id="page3">
+    <div class="hud-visual-elements">
+        <div class="p3-data-grid"></div><div class="p3-moving-bits"></div>
+    </div>
+    <div class="cinematic-header"><h2>MY<br><span>PROCESS</span></h2></div>
+    <div class="wide-grid-container">
+        <div class="contact-card">
             <div class="scan-line"></div>
-            <div class="card-header-block" style="margin-bottom:0; min-width:180px">
-                <div>
-                    <div class="card-tag">Final // 04</div>
-                    <div class="card-title" style="margin-top:10px; margin-bottom:0">Delivery</div>
-                </div>
+            <div class="card-header-block">
+                <div class="card-tag">Phase // 01</div>
+                <div class="card-id-num">01</div>
             </div>
-            <div class="card-body" style="display:flex; align-items:center">
-                <div class="card-value" style="font-size:16px">Payment and asset transfer via .RBXM or .RBXL files.</div>
+            <div class="card-body">
+                <div class="card-title">Concept</div>
+                <div class="card-value">Discussing what you need scripted, payment and customizability.</div>
             </div>
-            <div class="card-footer" style="border:none; margin-top:0; margin-left:auto">
-                <div class="footer-meta" style="color:var(--acc); font-weight:800">EXECUTE_FINAL_BUILD</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="page4">
-        <div class="hud-visual-elements">
-            <div class="p4-digital-horizon"></div><div class="p4-particles"></div>
-        </div>
-        
-        <div class="contact-spec-row">
-            <div class="spec-item">
-                <div class="spec-label">Internal Clock</div>
-                <div class="spec-value" id="germany-time">00:00:00<span> GER</span></div>
-            </div>
-            <div class="spec-item">
-                <div class="spec-label">Communication</div>
-                <div class="spec-value" id="comm-status">Available</div> 
-            </div>
-            <div class="spec-item" style="margin-left: auto; text-align: right">
-                <div class="spec-label">SEND INQUIRY</div>
-                <div class="spec-value" style="color: var(--acc)">01 // CONTACT</div>
+            <div class="card-footer">
+                <div class="footer-meta">X: 102.5 // Y: 44.0</div>
             </div>
         </div>
-
-        <div class="wide-grid-container">
-            <div class="contact-card" onclick="cpV('cryforhhxrizon','Discord')">
-                <div class="scan-line"></div>
-                <div class="card-header-block">
-                    <div class="card-tag">Social // 02</div>
-                    <div class="card-id-num">02</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Discord</div>
-                    <div class="card-value">Primary platform for project inquiries and active development updates. Do not use my E-Mail for contact purposes.</div>
-                </div>
-                <div class="card-footer">
-                    <div class="footer-meta" style="color:#5865F2; font-weight:800">cryforhhxrizon</div>
-                    <div class="footer-meta">COPY ID</div>
-                </div>
+        <div class="contact-card">
+            <div class="scan-line"></div>
+            <div class="card-header-block">
+                <div class="card-tag">Phase // 02</div>
+                <div class="card-id-num">02</div>
             </div>
-
-            <div class="contact-card" onclick="window.open('https://www.roblox.com/users/2348993256/profile','_blank')">
-                <div class="scan-line"></div>
-                <div class="card-header-block">
-                    <div class="card-tag">Platform // 03</div>
-                    <div class="card-id-num">03</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Roblox</div>
-                    <div class="card-value">Add me to your studio if needed. Only case where pre-payment is neccessary.</div>
-                </div>
-                <div class="card-footer">
-                    <div class="footer-meta" style="color:var(--rblx); font-weight:800">hhxrizon</div>
-                    <div class="footer-meta">VISIT</div>
-                </div>
+            <div class="card-body">
+                <div class="card-title">Scripting</div>
+                <div class="card-value">Making your required system and optimizing it.</div>
             </div>
-
-            <div class="contact-card" onclick="cpV('over.hxrizon@gmail.com','PayPal')">
-                <div class="scan-line"></div>
-                <div class="card-header-block">
-                    <div class="card-tag">Business // 04</div>
-                    <div class="card-id-num">04</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">PayPal</div>
-                    <div class="card-value">Send payments to my PayPal. I do not take Robux / Gift Cards / Percentage and only get paid Per Task. Minimum payment is 10$ USD, however I usually do advanced systems, so payment will vary. </div>
-                </div>
-                <div class="card-footer">
-                    <div class="footer-meta" style="color:var(--pp); font-weight:800">over.hxrizon@gmail.com</div>
-                    <div class="footer-meta">BILLING</div>
-                </div>
+            <div class="card-footer">
+                <div class="footer-meta">X: 205.1 // Y: 44.0</div>
             </div>
         </div>
-    </section>
+        <div class="contact-card">
+            <div class="scan-line"></div>
+            <div class="card-header-block">
+                <div class="card-tag">Phase // 03</div>
+                <div class="card-id-num">03</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Refinement</div>
+                <div class="card-value">Testing the system and taking feedback from you.</div>
+            </div>
+            <div class="card-footer">
+                <div class="footer-meta">X: 308.9 // Y: 44.0</div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-card delivery-wide">
+        <div class="scan-line"></div>
+        <div class="card-header-block" style="margin-bottom:0; min-width:180px">
+            <div>
+                <div class="card-tag">Final // 04</div>
+                <div class="card-title" style="margin-top:10px; margin-bottom:0">Delivery</div>
+            </div>
+        </div>
+        <div class="card-body" style="display:flex; align-items:center">
+            <div class="card-value" style="font-size:16px">Payment and asset transfer via .RBXM or .RBXL files.</div>
+        </div>
+        <div class="card-footer" style="border:none; margin-top:0; margin-left:auto">
+            <div class="footer-meta" style="color:var(--acc); font-weight:800">EXECUTE_FINAL_BUILD</div>
+        </div>
+    </div>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js"></script>
-    <script>
-        const IS_ACTIVE = true;
+<section id="page4">
+    <div class="hud-visual-elements">
+        <div class="p4-digital-horizon"></div><div class="p4-particles"></div>
+    </div>
+    
+    <div class="contact-spec-row">
+        <div class="spec-item">
+            <div class="spec-label">Internal Clock</div>
+            <div class="spec-value" id="germany-time">00:00:00<span> GER</span></div>
+        </div>
+        <div class="spec-item">
+<div class="spec-label">Communication</div>
+<div class="spec-value" id="comm-status">Available</div> </div>
+        <div class="spec-item" style="margin-left: auto; text-align: right">
+            <div class="spec-label">SEND INQUIRY</div>
+            <div class="spec-value" style="color: var(--acc)">01 // CONTACT</div>
+        </div>
+    </div>
 
-        function updateStatus(){
-            const s = document.getElementById('availability-status');
-            const h = document.getElementById('heartbeat-box');
-            const r = document.documentElement;
-            const c = document.getElementById('comm-status');
+    <div class="wide-grid-container">
+        <div class="contact-card" onclick="cpV('cryforhhxrizon','Discord')">
+            <div class="scan-line"></div>
+            <div class="card-header-block">
+                <div class="card-tag">Social // 02</div>
+                <div class="card-id-num">02</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Discord</div>
+                <div class="card-value">Primary platform for project inquiries and active development updates. Do not use my E-Mail for contact purposes.</div>
+            </div>
+            <div class="card-footer">
+                <div class="footer-meta" style="color:#5865F2; font-weight:800">cryforhhxrizon</div>
+                <div class="footer-meta">COPY ID</div>
+            </div>
+        </div>
 
-            if(IS_ACTIVE){
-                s.innerText = "Status: Active"; 
-                if(c) c.innerText = "Available";
-                h.classList.add('pulse-active');
-                r.style.setProperty('--status-clr','var(--rblx)'); 
-                r.style.setProperty('--status-bg','rgba(0,230,118,0.1)');
-            } else {
-                s.innerText = "Status: Inactive"; 
-                if(c) c.innerText = "Unavailable";
-                h.classList.remove('pulse-active');
-                r.style.setProperty('--status-clr','var(--error)'); 
-                r.style.setProperty('--status-bg','rgba(255,75,43,0.1)');
+        <div class="contact-card" onclick="window.open('[https://www.roblox.com/users/2348993256/profile','_blank](https://www.roblox.com/users/2348993256/profile','_blank)')">
+            <div class="scan-line"></div>
+            <div class="card-header-block">
+                <div class="card-tag">Platform // 03</div>
+                <div class="card-id-num">03</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Roblox</div>
+                <div class="card-value">Add me to your studio if needed. Only case where pre-payment is neccessary.</div>
+            </div>
+            <div class="card-footer">
+                <div class="footer-meta" style="color:var(--rblx); font-weight:800">hhxrizon</div>
+                <div class="footer-meta">VISIT</div>
+            </div>
+        </div>
+
+        <div class="contact-card" onclick="cpV('over.hxrizon@gmail.com','PayPal')">
+            <div class="scan-line"></div>
+            <div class="card-header-block">
+                <div class="card-tag">Business // 04</div>
+                <div class="card-id-num">04</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">PayPal</div>
+                <div class="card-value">Send payments to my PayPal. I do not take Robux / Gift Cards / Percentage and only get paid Per Task. Minimum payment is 10$ USD, however I usually do advanced systems, so payment will vary. </div>
+            </div>
+            <div class="card-footer">
+                <div class="footer-meta" style="color:var(--pp); font-weight:800">over.hxrizon@gmail.com</div>
+                <div class="footer-meta">BILLING</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="[https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js](https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js)"></script>
+<script src="[https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js](https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js)"></script>
+<script>
+    const IS_ACTIVE = true;
+
+    function updateStatus(){
+        const s = document.getElementById('availability-status');
+        const h = document.getElementById('heartbeat-box');
+        const r = document.documentElement;
+        const c = document.getElementById('comm-status');
+
+        if(IS_ACTIVE){
+            s.innerText = "Status: Active"; 
+            if(c) c.innerText = "Available";
+            h.classList.add('pulse-active');
+            r.style.setProperty('--status-clr','var(--rblx)'); 
+            r.style.setProperty('--status-bg','rgba(0,230,118,0.1)');
+        } else {
+            s.innerText = "Status: Inactive"; 
+            if(c) c.innerText = "Unavailable";
+            h.classList.remove('pulse-active');
+            r.style.setProperty('--status-clr','var(--error)'); 
+            r.style.setProperty('--status-bg','rgba(255,75,43,0.1)');
+        }
+    }
+
+    function updateGermanyTime() {
+        const options = {
+            timeZone: 'Europe/Berlin',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        };
+        const formatter = new Intl.DateTimeFormat([], options);
+        const timeElement = document.getElementById('germany-time');
+        if (timeElement) {
+            timeElement.innerHTML = formatter.format(new Date()) + "<span> GER (GMT+1)</span>";
+        }
+    }
+
+    function updateFrameLabel(n) {
+        const label = document.getElementById('active-frame-label');
+        if (label) label.innerText = `PAGE_0${n}`;
+    }
+
+    function sTP(n){
+        const t=document.getElementById("page"+n); 
+        if(t) {
+            t.scrollIntoView({behavior:"smooth"});
+            updateFrameLabel(n);
+        }
+    }
+
+    const observerOptions = { threshold: 0.5 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const pageId = entry.target.id.replace('page', '');
+                updateFrameLabel(pageId);
             }
-        }
+        });
+    }, observerOptions);
 
-        function updateGermanyTime() {
-            const options = {
-                timeZone: 'Europe/Berlin',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            };
-            const formatter = new Intl.DateTimeFormat([], options);
-            const timeElement = document.getElementById('germany-time');
-            if (timeElement) {
-                timeElement.innerHTML = formatter.format(new Date()) + "<span> GER (GMT+1)</span>";
-            }
-        }
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+    
+    setInterval(() => {
+        const ping = document.getElementById('ms-ping');
+        if(ping) ping.innerText = Math.floor(Math.random() * 5 + 18) + "ms";
+    }, 2000);
 
-        function updateFrameLabel(n) {
-            const label = document.getElementById('active-frame-label');
-            if (label) label.innerText = `PAGE_0${n}`;
-        }
+    updateStatus();
+    setInterval(updateGermanyTime, 1000);
+    updateGermanyTime();
 
-        function sTP(n){
-            const t=document.getElementById("page"+n); 
-            if(t) {
-                t.scrollIntoView({behavior:"smooth"});
-                updateFrameLabel(n);
-            }
-        }
+    function cpV(t,y){navigator.clipboard.writeText(t).then(()=>{sT(y+" Copied")})}
+    function sT(m){
+        const c=document.getElementById('toast-container'), t=document.createElement('div');
+        t.className='toast'; t.innerText=m; c.appendChild(t);
+        setTimeout(()=>t.classList.add('show'),100);
+        setTimeout(()=>{t.classList.remove('show'); setTimeout(()=>t.remove(),400)},3000);
+    }
+    function toggleDropdown(element) { element.classList.toggle('expanded'); }
+</script>
 
-        const observerOptions = { threshold: 0.5 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const pageId = entry.target.id.replace('page', '');
-                    updateFrameLabel(pageId);
-                }
-            });
-        }, observerOptions);
+```
 
-        document.querySelectorAll('section').forEach(section => observer.observe(section));
-        
-        setInterval(() => {
-            const ping = document.getElementById('ms-ping');
-            if(ping) ping.innerText = Math.floor(Math.random() * 5 + 18) + "ms";
-        }, 2000);
-
-        updateStatus();
-        setInterval(updateGermanyTime, 1000);
-        updateGermanyTime();
-
-        function cpV(t,y){navigator.clipboard.writeText(t).then(()=>{sT(y+" Copied")})}
-        function sT(m){
-            const c=document.getElementById('toast-container'), t=document.createElement('div');
-            t.className='toast'; t.innerText=m; c.appendChild(t);
-            setTimeout(()=>t.classList.add('show'),100);
-            setTimeout(()=>{t.classList.remove('show'); setTimeout(()=>t.remove(),400)},3000);
-        }
-        function toggleDropdown(element) { element.classList.toggle('expanded'); }
-    </script>
 </body>
 </html>
