@@ -332,10 +332,22 @@ return Module</code></pre>
                 <div class="pair-meta">-- MODULE / JOHN'S DINER</div>
                 <div class="pair-title">Name Tag Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
-                    <pre><code class="language-lua">-- Module Settings
+                    <pre><code class="language-lua">-- Services
+local ServerStorage = game:GetService("ServerStorage")
+-- Variables
+local GradientFolder = ServerStorage.Gradients
+-- Module
 local Settings = {
     GroupId = 3247638,
     DefaultRole = "Unknown.",
+    NameGUIBlacklist = {//Censored, //Censored, //Censored, //Censored, //Censored, //Censored, //Censored, //Censored},
+    NameGUIColors = {
+        {UserId = //Censored, Color = nil, NameOverride = "? Hhxrizon ?", RoleOverride = "Archangel.", Gradient = GradientFolder.PinkCyan},
+        {UserId = //Censored, Color = nil, NameOverride = "? Soleil ?", RoleOverride = "The Acolyte.", Gradient = GradientFolder.BlackPurple},
+        {UserId = //Censored, Color = nil, NameOverride = "? Unicorn ?", RoleOverride = "Pookie Bear.", Gradient = GradientFolder.PinkRedYellow},
+        {UserId = //Censored, Color = nil, NameOverride = "? Carnis ?", RoleOverride = "The Spectator.", Gradient = GradientFolder.BlackRed},
+        {UserId = //Censored, Color = nil, NameOverride = "? Donnie ?", RoleOverride = "Diva!", Gradient = GradientFolder.PinkPeach},
+    },
     NameGUIOffset = Vector3.new(0, 1.55, 0),
     NameGUIWeldPart = "Head",
 }
@@ -347,15 +359,25 @@ return Settings</code></pre>
                 <div class="pair-meta">-- MODULE / JOHN'S DINER</div>
                 <div class="pair-title">Door Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
-                    <pre><code class="language-lua">-- Door Settings
+                    <pre><code class="language-lua">-- Module
 local Settings = {
     DebounceTime = 0.25,
     Easing = {
-        Open = {Enum.EasingStyle.Back, Enum.EasingDirection.Out},
-        Close = {Enum.EasingStyle.Sine, Enum.EasingDirection.Out}
+        Open = {
+            Enum.EasingStyle.Back,
+            Enum.EasingDirection.Out
+        },
+        Close = {
+            Enum.EasingStyle.Sine,
+            Enum.EasingDirection.Out
+        }
     },
 }
-return Settings</code></pre>
+return Settings
+-- Customizable in door attributes:
+-- Open/CloseSoundId
+-- Open/CloseTime
+-- OpenAngle</code></pre>
                 </div> 
             </div>
         </div>
