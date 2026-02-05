@@ -130,7 +130,16 @@
         .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
         
         .pair-desc {font-size: 13px;color: #888;line-height: 1.5;max-height: 0;overflow: hidden;transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;opacity: 0;}
-        .pair-desc pre { margin: 0; padding: 10px; background: rgba(0,0,0,0.5) !important; border-radius: 4px; font-size: 11px; overflow-x: auto; }
+        .pair-desc pre { 
+    margin: 0; 
+    padding: 10px; 
+    background: rgba(0,0,0,0.5) !important; 
+    border-radius: 4px; 
+    font-size: 11px; 
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
         .pair-desc code { font-family: 'Fira Code', monospace !important; }
         .video-box {
     width: 100%;
