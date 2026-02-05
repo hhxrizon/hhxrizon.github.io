@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>hhxrizon | Luau Commissions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Roboto+Condensed:wght@700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Fira+Code:wght@400;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,7 +19,7 @@
         @keyframes signalPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
         *{margin:0;padding:0;box-sizing:border-box}
-        :root{--h-h:103px;--bg0:#0f0f0f;--bg1:#0d0d0d;--grad:linear-gradient(90deg,#ff8c00 0%,#ff4500 100%);--rev:linear-gradient(90deg,#ff4500 0%,#ff8c00 100%);--btn-h:68px;--sl:68px;--gap:15px;--acc:#ff4500;--rblx:#00e676;--error:#ff4b2b;--pp:#0070ba}
+        :root{--h-h:103px;--bg0:#0f0f0f;--bg1:#141414;--grad:linear-gradient(90deg,#ff8c00 0%,#ff4500 100%);--rev:linear-gradient(90deg,#ff4500 0%,#ff8c00 100%);--btn-h:68px;--sl:68px;--gap:15px;--acc:#ff4500;--rblx:#00e676;--error:#ff4b2b;--pp:#0070ba}
         
         body{height:100%;background:var(--bg0);color:#fff;font-family:Montserrat,sans-serif;overflow-x:hidden;scrollbar-width:none;scroll-behavior:smooth}
         body::-webkit-scrollbar{display:none}
@@ -123,48 +124,22 @@
         .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
         .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
         .column-content {display:flex;flex-direction:column;gap:20px}
-        
-        /* New Code Editor Styles */
-        .code-display-frame {
-            background: #050505;
-            border: 1px solid rgba(255, 69, 0, 0.2);
-            padding: 20px;
-            font-family: 'Fira Code', monospace;
-            font-size: 13px;
-            line-height: 1.6;
-            position: relative;
-            overflow-x: auto;
-            margin-top: 5px;
-            border-radius: 4px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-            text-align: left;
-        }
-        .code-display-frame::before {
-            content: "SOURCE_VIEWER";
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 9px;
-            color: var(--acc);
-            opacity: 0.5;
-        }
-        .code-keyword { color: #ff7b72; } 
-        .code-service { color: #79c0ff; }
-        .code-comment { color: #8b949e; font-style: italic; }
-        .code-string  { color: #a5d6ff; }
-
         .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative; user-select: none; outline: none;}
         .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
         .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
         .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
         
         .pair-desc {font-size: 13px;color: #888;line-height: 1.5;max-height: 0;overflow: hidden;transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;opacity: 0;}
+        /* Code Box specific styling to keep it clean */
+        .pair-desc pre { margin: 0; padding: 10px; background: rgba(0,0,0,0.5) !important; border-radius: 4px; font-size: 11px; overflow-x: auto; }
+        .pair-desc code { font-family: 'Fira Code', monospace !important; }
+
         .video-box {width: 100%;height: 140px;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
         .video-box::before {content:"PENDING";font-family:'Fira Code';font-size:10px;color:var(--acc);opacity:0.5}
         
         .dropdown-arrow {width: 70px;height: 70px;fill: var(--acc);transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);transform: rotate(-90deg);position: absolute;right: -25px;top: 50%;margin-top: -35px;pointer-events: none;}
         .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
-        .pair-item.expanded .pair-desc { max-height: 300px; opacity: 1; margin-top: 10px; }
+        .pair-item.expanded .pair-desc { max-height: 400px; opacity: 1; margin-top: 10px; overflow-y: auto; }
         .pair-item.expanded .video-box { max-height: 140px; opacity: 1; margin-top: 15px; transform: scale(1); border-color: #222; }
 
         .cinematic-header{margin-bottom:40px;position:relative;z-index:2;width:100%;max-width:1400px}
@@ -270,19 +245,20 @@
         <div class="data-column">
             <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
             <div class="column-content">
-                <div class="pair-meta">-- LIVE_PREVIEW.lua</div>
-                <div class="code-display-frame">
-                    <span class="code-comment">-- Services</span><br>
-                    <span class="code-keyword">local</span> Players = game:GetService(<span class="code-string">"Players"</span>)<br>
-                    <span class="code-keyword">local</span> ReplicatedStorage = game:GetService(<span class="code-string">"ReplicatedStorage"</span>)<br>
-                    <span class="code-keyword">local</span> TweenService = game:GetService(<span class="code-string">"TweenService"</span>)<br>
-                    <span class="code-keyword">local</span> RunService = game:GetService(<span class="code-string">"RunService"</span>)<br>
-                    <br>
-                    <span class="code-comment">-- Example Implementation</span><br>
-                    <span class="code-keyword">local</span> <span class="code-service">Player</span> = Players.LocalPlayer<br>
-                    <span class="code-keyword">local</span> <span class="code-service">Mouse</span> = Player:GetMouse()<br>
+                <div class="pair-item" onclick="toggleDropdown(this)">
+                    <div class="pair-meta">-- LOGIC</div>
+                    <div class="pair-title">Round System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                    <div class="pair-desc">
+                        <pre><code class="language-lua"></code></pre>
+                    </div>
                 </div>
-                <p style="font-size: 12px; color: #666; font-family: 'Roboto Condensed';">Example of my standardized service declaration and clean variable naming convention.</p>
+                <div class="pair-item" onclick="toggleDropdown(this)">
+                    <div class="pair-meta">-- LOGIC</div>
+                    <div class="pair-title">Data Store <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                    <div class="pair-desc">
+                        <pre><code class="language-lua"></code></pre>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="data-column">
@@ -290,13 +266,17 @@
             <div class="column-content">
                 <div class="pair-item" onclick="toggleDropdown(this)">
                     <div class="pair-meta">-- MODULE</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
+                    <div class="pair-title">UI Controller <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                    <div class="pair-desc">
+                        <pre><code class="language-lua"></code></pre>
+                    </div>
                 </div>
                 <div class="pair-item" onclick="toggleDropdown(this)">
                     <div class="pair-meta">-- MODULE</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
+                    <div class="pair-title">Ability System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                    <div class="pair-desc">
+                         <pre><code class="language-lua"></code></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -452,6 +432,9 @@
             </div>
         </div>
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js"></script>
 
     <script>
         const IS_ACTIVE = true;
