@@ -132,9 +132,22 @@
         .pair-desc {font-size: 13px;color: #888;line-height: 1.5;max-height: 0;overflow: hidden;transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;opacity: 0;}
         .pair-desc pre { margin: 0; padding: 10px; background: rgba(0,0,0,0.5) !important; border-radius: 4px; font-size: 11px; overflow-x: auto; }
         .pair-desc code { font-family: 'Fira Code', monospace !important; }
-
-        .video-box {width: 100%;height: 140px;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
-        .video-box::before {
+        .video-box {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.98);
+    transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.4s ease, transform 0.5s ease;
+}
+         .video-box::before {
     content: "PENDING";
     font-family: 'Fira Code';
     font-size: 10px;
@@ -150,8 +163,8 @@
         .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
         .pair-item.expanded .pair-desc { max-height: 400px; opacity: 1; margin-top: 10px; overflow-y: auto; }
 .pair-item.expanded .video-box { 
-    max-height: 235px;
-    height: 235px;
+    max-height: 235px; /* High enough to contain the height below */
+    height: 235px;     /* Fixed height prevents the 'snap' */
     opacity: 1; 
     margin-top: 15px; 
     transform: scale(1); 
