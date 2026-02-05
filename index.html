@@ -42,9 +42,9 @@
         .network-node {display: flex; flex-direction: column; gap: 4px; padding-left: 10px;}
         .network-bars {display: flex; align-items: flex-end; gap: 2px; height: 12px;}
         .bar {width: 3px; background: #333; transition: 0.3s;}
-        .bar.active {background: var(--acc); box-shadow: 0 0 5px var(--acc);}
+        .bar.active {background: var(--rblx); box-shadow: 0 0 5px var(--rblx);}
         .latency-text {font-family: 'Fira Code'; font-size: 8px; color: #555; text-transform: uppercase;}
-        #ms-ping {color: #aaa; margin-left: 4px;}
+        #ms-ping {color: var(--rblx); margin-left: 4px; font-weight: 600;}
 
         .heartbeat-box{width:60px;height:20px;position:relative;overflow:hidden;opacity:0.8}
         .heartbeat-box svg{width:100%;height:100%}
@@ -56,31 +56,32 @@
         .top-right-image{position:absolute;top:0;right:0;width:calc(50% + 51.5px);height:var(--h-h);overflow:hidden;clip-path:polygon(103px 0,100% 0,100% 100%,0 100%)}
         .top-right-image img{width:100%;height:100%;object-fit:cover;opacity:.15;filter:grayscale(1)}
         .top-right-buttons {
-    position: absolute;
-    top: 15px;
-    left: calc(50% + var(--gap));
-    right: var(--gap);
-    height: var(--btn-h);
-    display: flex;
-    gap: calc(var(--gap) - var(--sl));
-    z-index: 11;
-}
+            position: absolute;
+            top: 15px;
+            left: calc(50% + var(--gap));
+            right: var(--gap);
+            height: var(--btn-h);
+            display: flex;
+            gap: calc(var(--gap) - var(--sl));
+            z-index: 11;
+        }
 
-.top-right-buttons button {
-    flex: 1;
-    height: var(--btn-h);
-    background: rgba(255, 255, 255, .15);
-    color: #fff;
-    border: 2.5px solid rgba(255, 255, 255, .2);
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    text-transform: uppercase;
-    clip-path: polygon(var(--sl) 0, 100% 0, calc(100% - var(--sl)) 100%, 0 100%);
-    transition: .2s;
-}
+        .top-right-buttons button {
+            flex: 1;
+            height: var(--btn-h);
+            background: rgba(255, 255, 255, .15);
+            color: #fff;
+            border: 2.5px solid rgba(255, 255, 255, .2);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
+            clip-path: polygon(var(--sl) 0, 100% 0, calc(100% - var(--sl)) 100%, 0 100%);
+            transition: .2s;
+            outline: none; /* Removes the glitchy blue focus ring */
+        }
         .top-right-buttons button:hover{background:#fff;color:#000}
         .top-right-buttons button:last-child{clip-path:polygon(var(--sl) 0,100% 0,100% 100%,0 100%);border:3px solid;border-image:var(--rev) 1;padding-left:calc(var(--sl) / 2);font-weight:800}
         
@@ -122,7 +123,7 @@
         .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
         .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
         .column-content {display:flex;flex-direction:column;gap:20px}
-        .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative}
+        .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative; user-select: none; outline: none;}
         .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
         .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
         .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
@@ -195,7 +196,7 @@
                     <div class="bar active" style="height: 4px;"></div>
                     <div class="bar active" style="height: 7px;"></div>
                     <div class="bar active" style="height: 10px;"></div>
-                    <div class="bar" style="height: 12px; animation: signalPulse 1s infinite alternate"></div>
+                    <div class="bar active" style="height: 12px; animation: signalPulse 1s infinite alternate"></div>
                 </div>
                 <div class="latency-text">Link Latency: <span id="ms-ping">24ms</span></div>
             </div>
@@ -458,7 +459,6 @@
             }
         }
 
-        // --- DYNAMIC FRAME LABEL LOGIC ---
         function updateFrameLabel(n) {
             const label = document.getElementById('active-frame-label');
             if (label) label.innerText = `PAGE_0${n}`;
@@ -472,7 +472,6 @@
             }
         }
 
-        // Automatic scroll detection
         const observerOptions = { threshold: 0.5 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -485,10 +484,9 @@
 
         document.querySelectorAll('section').forEach(section => observer.observe(section));
         
-        // Simulating network ping
         setInterval(() => {
             const ping = document.getElementById('ms-ping');
-            if(ping) ping.innerText = Math.floor(Math.random() * 15 + 18) + "ms";
+            if(ping) ping.innerText = Math.floor(Math.random() * 5 + 18) + "ms";
         }, 2000);
 
         updateStatus();
