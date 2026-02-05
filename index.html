@@ -241,25 +241,28 @@
         <div class="hud-visual-elements">
             <div class="p2-neural-bg"></div><div class="p2-synapse-grid"></div><div class="p2-pulse-line"></div>
         </div>
-        <div class="data-column">
-            <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
-            <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Round System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">
-                        <pre><code class="language-lua"></code></pre>
-                    </div>
-                </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Data Store <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">
-                        <pre><code class="language-lua"></code></pre>
-                    </div>
-                </div>
+       <div class="data-column">
+    <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
+    <div class="column-content">
+        <div class="pair-item expanded" style="cursor: default; transform: none;">
+            <div class="pair-meta">-- SOURCE // CORE_LOGIC</div>
+            <div class="pair-title">System Examples</div>
+            <div class="pair-desc" style="max-height: 500px; opacity: 1; margin-top: 10px;">
+                <pre><code class="language-lua">-- Example: Round System
+local RoundManager = {}
+function RoundManager:Start()
+    print("Initialize Match")
+end
+
+-- Example: Data Store
+local DataService = {}
+function DataService:Save(player)
+    -- Save Logic
+end</code></pre>
             </div>
         </div>
+    </div>
+</div>
         <div class="data-column">
             <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
             <div class="column-content">
