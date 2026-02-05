@@ -35,7 +35,6 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 #page2{flex-direction:column;justify-content:center;overflow:hidden}
 .example-grid-container{z-index:2;width:100%;max-width:1400px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
 
-/* NEW PENDING FRAME STYLES */
 .pending-placeholder{position:relative;height:380px;background:#0d0d0d;border:1px solid rgba(255,69,0,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;transition:.4s}
 .pending-placeholder:hover{border-color:var(--acc);transform:translateY(-5px);background:#111}
 .pending-placeholder::before{content:"DATA_STREAM: 0x4F2A";position:absolute;top:15px;left:15px;font-family:'Fira Code';font-size:9px;color:var(--acc);opacity:.4}
@@ -48,11 +47,12 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 
 .binary-bg{position:absolute;font-family:'Fira Code';font-size:8px;color:var(--acc);opacity:0.05;line-height:1;user-select:none;pointer-events:none;text-align:justify;width:120%}
 
-#page3{background:var(--bg1);flex-direction:column;justify-content:center;align-items:center}
+/* MODIFIED PAGE 3 FOR CENTERING */
+#page3{background:var(--bg1);flex-direction:column;justify-content:center;align-items:center;padding-top:var(--h-h)}
+
 .process-geometry-bg{position:absolute;inset:0;pointer-events:none}
 .blueprint-grid{position:absolute;inset:-50%;background-image:linear-gradient(rgba(255,69,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,69,0,.05) 1px,transparent 1px);background-size:80px 80px;transform:rotate(15deg);animation:gF 30s linear infinite}
 
-/* ADDED GEOMETRIC BACKGROUND FOR PAGE 3 */
 .process-decoration { position: absolute; inset: 0; overflow: hidden; opacity: 0.15; z-index: 1; }
 .geo-shape { position: absolute; border: 1px solid var(--acc); transform: rotate(45deg); animation: floatGeo 20s infinite linear; }
 .shape-1 { width: 300px; height: 300px; top: -50px; left: 10%; border-style: dashed; }
@@ -166,22 +166,22 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 <div class="contact-cinematic-header"><h2>SYSTEM<br><span>ARCHIVE</span></h2></div>
 <div class="example-grid-container">
 <div class="pending-placeholder">
-    <div class="binary-bg">1010110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-    <div class="cube-visual"></div>
-    <div class="glitch-text">PENDING</div>
-    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
+    <div class="binary-bg">1010110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
+    <div class="cube-visual"></div>
+    <div class="glitch-text">PENDING</div>
+    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
 </div>
 <div class="pending-placeholder">
-    <div class="binary-bg">0010110011101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-    <div class="cube-visual" style="animation-delay:-2s"></div>
-    <div class="glitch-text">PENDING</div>
-    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
+    <div class="binary-bg">0010110011101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
+    <div class="cube-visual" style="animation-delay:-2s"></div>
+    <div class="glitch-text">PENDING</div>
+    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
 </div>
 <div class="pending-placeholder">
-    <div class="binary-bg">1110110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-    <div class="cube-visual" style="animation-delay:-5s"></div>
-    <div class="glitch-text">PENDING</div>
-    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
+    <div class="binary-bg">1110110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
+    <div class="cube-visual" style="animation-delay:-5s"></div>
+    <div class="glitch-text">PENDING</div>
+    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
 </div>
 </div>
 </section>
@@ -200,7 +200,7 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 </div>
 <div class="contact-card" style="width:100%;max-width:1400px;height:160px;margin-top:30px;flex-direction:row;align-items:center;gap:60px">
 <div class="card-bg-text">04</div><div style="position:relative;z-index:2"><div class="card-tag">Final // 04</div><div class="card-title">Delivery</div></div>
-<div class="card-value" style="font-size:16px;max-width:600px;z-index:2">Payment and final product sent in a RBXM or RBXL file.</div>
+<div class="card-value" style="font-size:16px;max-width:600px;z-index:2">Payment and final product sent in a RBXM/L file.</div>
 <div class="card-footer" style="margin-left:auto">EXECUTE_FINAL_BUILD</div>
 </div>
 </section>
@@ -208,17 +208,17 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 <div class="page4-bg-overlay"></div>
 <div class="terminal-stream">local System = {}
 function System.init()
-  print("Initializing...")
-  return true
+  print("Initializing...")
+  return true
 end
 -- HX-PROTOCOL-ACTIVE
 local meta = setmetatable({}, {
-  __index = function(t, k)
-    return "ACCESS_DENIED"
-  end
+  __index = function(t, k)
+    return "ACCESS_DENIED"
+  end
 })
 while task.wait(1) do
-  System.update()
+  System.update()
 end
 -- [END_OF_TRANSMISSION]</div>
 <div class="hud-bracket bracket-tl"></div><div class="hud-bracket bracket-br"></div>
