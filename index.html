@@ -133,10 +133,6 @@
         .pair-desc pre { margin: 0; padding: 10px; background: rgba(0,0,0,0.5) !important; border-radius: 4px; font-size: 11px; overflow-x: auto; }
         .pair-desc code { font-family: 'Fira Code', monospace !important; }
 
-        /* Force open state for script column specifically */
-        .static-open { cursor: default !important; transform: none !important; }
-        .static-open .pair-desc { max-height: 600px; opacity: 1; margin-top: 10px; overflow-y: auto; }
-
         .video-box {width: 100%;height: 140px;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
         .video-box::before {content:"PENDING";font-family:'Fira Code';font-size:10px;color:var(--acc);opacity:0.5}
         
@@ -248,20 +244,18 @@
         <div class="data-column">
             <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
             <div class="column-content">
-                <div class="pair-item static-open">
-                    <div class="pair-meta">-- LOGIC // SOURCE_CODE</div>
-                    <div class="pair-title">Active Script Environment</div>
+                <div class="pair-item" onclick="toggleDropdown(this)">
+                    <div class="pair-meta">-- LOGIC</div>
+                    <div class="pair-title">Round System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                     <div class="pair-desc">
-                        <pre><code class="language-lua">-- Example: Round System Logic
-local RoundManager = {}
-RoundManager.IntermissionTime = 30
-
-function RoundManager:StartRound()
-    print("Initializing game loop...")
-    -- Modular logic here
-end
-
-return RoundManager</code></pre>
+                        <pre><code class="language-lua"></code></pre>
+                    </div>
+                </div>
+                <div class="pair-item" onclick="toggleDropdown(this)">
+                    <div class="pair-meta">-- LOGIC</div>
+                    <div class="pair-title">Data Store <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                    <div class="pair-desc">
+                        <pre><code class="language-lua"></code></pre>
                     </div>
                 </div>
             </div>
@@ -269,18 +263,18 @@ return RoundManager</code></pre>
         <div class="data-column">
             <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
             <div class="column-content">
-                <div class="pair-item static-open">
-                    <div class="pair-meta">-- MODULE // ARCHITECTURE</div>
-                    <div class="pair-title">Modular Controller</div>
+                <div class="pair-item" onclick="toggleDropdown(this)">
+                    <div class="pair-meta">-- MODULE</div>
+                    <div class="pair-title">UI Controller <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                     <div class="pair-desc">
-                        <pre><code class="language-lua">-- Example: UI Controller Module
-local UIController = {}
-
-function UIController:ToggleMenu(state)
-    -- Clean, efficient transitions
-end
-
-return UIController</code></pre>
+                        <pre><code class="language-lua"></code></pre>
+                    </div>
+                </div>
+                <div class="pair-item" onclick="toggleDropdown(this)">
+                    <div class="pair-meta">-- MODULE</div>
+                    <div class="pair-title">Ability System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                    <div class="pair-desc">
+                         <pre><code class="language-lua"></code></pre>
                     </div>
                 </div>
             </div>
@@ -521,12 +515,7 @@ return UIController</code></pre>
             setTimeout(()=>t.classList.add('show'),100);
             setTimeout(()=>{t.classList.remove('show'); setTimeout(()=>t.remove(),400)},3000);
         }
-        function toggleDropdown(element) { 
-            // Only allow toggle if it's NOT a static-open item
-            if(!element.classList.contains('static-open')){
-                element.classList.toggle('expanded'); 
-            }
-        }
+        function toggleDropdown(element) { element.classList.toggle('expanded'); }
     </script>
 </body>
 </html>
