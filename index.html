@@ -327,8 +327,8 @@ local Module = {
 return Module</code></pre>
                 </div>
                   <div class="pair-item" onclick="toggleDropdown(this)">
-                <div class="pair-meta">-- CODE PREVIEW</div>
-                <div class="pair-title">Module Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-meta">-- MODULE / JOHN'S DINER</div>
+                <div class="pair-title">Name Tag Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
                     <pre><code class="language-lua">-- Services
 local ServerStorage = game:GetService("ServerStorage")
@@ -357,10 +357,28 @@ local Settings = {
 return Settings</code></pre>
                 </div> 
                         <div class="pair-item" onclick="toggleDropdown(this)">
-                <div class="pair-meta">-- CODE PREVIEW</div>
-                <div class="pair-title">Module Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-meta">-- MODULE / JOHN'S DINER</div>
+                <div class="pair-title">Door Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
                 <div class="pair-desc">
-                    <pre><code class="language-lua"></code></pre>
+                    <pre><code class="language-lua"></code>-- Module
+local Settings = {
+	DebounceTime = 0.25,
+	Easing = {
+		Open = {
+			Enum.EasingStyle.Back,
+			Enum.EasingDirection.Out
+		},
+		Close = {
+			Enum.EasingStyle.Sine,
+			Enum.EasingDirection.Out
+		}
+	},
+}
+return Settings
+-- Customizable in door attributes:
+-- Open/CloseSoundId
+-- Open/CloseTime
+-- OpenAngle</pre>
                 </div> 
             </div> </div> </div>
 
