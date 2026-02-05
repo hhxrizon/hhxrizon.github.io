@@ -6,6 +6,7 @@
     <title>hhxrizon | Luau Commissions</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Roboto+Condensed:wght@700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Fira+Code:wght@400;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
         @keyframes p3float { from { background-position: 0 0; } to { background-position: -400px 400px; } }
         @keyframes rotateRing{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
@@ -129,13 +130,19 @@
         .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
         
         .pair-desc {font-size: 13px;color: #888;line-height: 1.5;max-height: 0;overflow: hidden;transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;opacity: 0;}
-        .video-box {width: 100%;height: 140px;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
-        .video-box::before {content:"PENDING";font-family:'Fira Code';font-size:10px;color:var(--acc);opacity:0.5}
-        
+        .video-box {width: 100%;height: auto;max-height: 0;opacity: 0;margin-top: 0;background: #000;display: flex;align-items: center;justify-content: center;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
+        .video-box video { width: 100%; height: auto; display: block; }
+
+        .code-box {width: 100%;max-height: 0;opacity: 0;margin-top: 0;background: #1e1e1e;border: 1px solid transparent;position: relative;overflow: hidden;transform: scale(0.98);transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;}
+        .code-box pre { margin: 0; padding: 15px; font-size: 11px; max-height: 250px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--acc) transparent; }
+        .code-box pre::-webkit-scrollbar { width: 4px; }
+        .code-box pre::-webkit-scrollbar-thumb { background: var(--acc); }
+
         .dropdown-arrow {width: 70px;height: 70px;fill: var(--acc);transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);transform: rotate(-90deg);position: absolute;right: -25px;top: 50%;margin-top: -35px;pointer-events: none;}
         .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
         .pair-item.expanded .pair-desc { max-height: 300px; opacity: 1; margin-top: 10px; }
-        .pair-item.expanded .video-box { max-height: 140px; opacity: 1; margin-top: 15px; transform: scale(1); border-color: #222; }
+        .pair-item.expanded .video-box { max-height: 300px; opacity: 1; margin-top: 15px; transform: scale(1); border-color: #222; }
+        .pair-item.expanded .code-box { max-height: 300px; opacity: 1; margin-top: 15px; transform: scale(1); border-color: #222; }
 
         .cinematic-header{margin-bottom:40px;position:relative;z-index:2;width:100%;max-width:1400px}
         .cinematic-header h2{font-size:110px;font-weight:800;letter-spacing:-5px;line-height:.9;text-transform:uppercase}
@@ -219,7 +226,7 @@
                 <div class="perk-item"><strong>01 // Experience</strong><p>Over 2.5 years of experience in Luau, creating complex and efficient game systems.</p></div>
                 <div class="perk-item"><strong>02 // Scheduling</strong><p>Work on your time. My flexible schedule ensures fast responses and availability.</p></div>
                 <div class="perk-item"><strong>03 // Reliability</strong><p>If you encounter a bug post-payment, I'll fix it for free, no questions asked.</p></div>
-                <div class="perk-item"><strong>04 // Customizability</strong><p>I script using modules, making every system easy to tweak to your liking.</p></div>
+                <div class="perk-item)<strong>04 // Customizability</strong><p>I script using modules, making every system easy to tweak to your liking.</p></div>
             </div>
         </div>
         <div class="showcase-right">
@@ -243,12 +250,16 @@
                 <div class="pair-item" onclick="toggleDropdown(this)">
                     <div class="pair-meta">-- LOGIC</div>
                     <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
-                </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
+                    <div class="pair-desc">Clean, commented logic for standard server-side tasks.</div>
+                    <div class="code-box">
+                        <pre><code class="language-lua">local Players = game:GetService("Players")
+
+local function onPlayerAdded(player)
+    print(player.Name .. " has entered the horizon.")
+end
+
+Players.PlayerAdded:Connect(onPlayerAdded)</code></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,12 +269,16 @@
                 <div class="pair-item" onclick="toggleDropdown(this)">
                     <div class="pair-meta">-- MODULE</div>
                     <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
-                </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- MODULE</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
+                    <div class="pair-desc">Reusable, modular components built for scale.</div>
+                    <div class="code-box">
+                        <pre><code class="language-lua">local Utility = {}
+
+function Utility.Lerp(a, b, t)
+    return a + (b - a) * t
+end
+
+return Utility</code></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -273,12 +288,12 @@
                 <div class="pair-item" onclick="toggleDropdown(this)">
                     <div class="pair-meta">-- VIDEO</div>
                     <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="video-box"></div>
-                </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- VIDEO</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="video-box"></div>
+                    <div class="pair-desc">Visual demonstration of dynamic systems in action.</div>
+                    <div class="video-box">
+                        <video controls loop muted>
+                            <source src="your-video-url.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
@@ -361,8 +376,9 @@
                 <div class="spec-value" id="germany-time">00:00:00<span> GER</span></div>
             </div>
             <div class="spec-item">
-    <div class="spec-label">Communication</div>
-    <div class="spec-value" id="comm-status">Available</div> </div>
+                <div class="spec-label">Communication</div>
+                <div class="spec-value" id="comm-status">Available</div> 
+            </div>
             <div class="spec-item" style="margin-left: auto; text-align: right">
                 <div class="spec-label">SEND INQUIRY</div>
                 <div class="spec-value" style="color: var(--acc)">01 // CONTACT</div>
@@ -420,6 +436,8 @@
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js"></script>
     <script>
         const IS_ACTIVE = true;
 
