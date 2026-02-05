@@ -113,7 +113,7 @@
         .line-h{height:1px;width:100%;left:0}
         .corner-tag{position:absolute;font-family:'Fira Code';font-size:10px;color:var(--acc);text-transform:uppercase}
         
-        #page2{flex-direction:row;justify-content:center;align-items:center;gap:30px;padding:140px 50px 60px 50px;background:#0a0a0a}
+        #page2{flex-direction:row;justify-content:center;align-items:flex-start;gap:30px;padding:140px 50px 60px 50px;background:#0a0a0a}
         .p2-neural-bg {position: absolute;inset: 0;background: radial-gradient(circle at 20% 30%, rgba(255,69,0,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,69,0,0.08) 0%, transparent 40%);opacity: 0.6;}
         .p2-synapse-grid {position: absolute;inset: 0;background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,69,0,0.1)' stroke-width='0.5'%3E%3Ccircle cx='100' cy='100' r='2' fill='rgba(255,69,0,0.2)'/%3E%3Cpath d='M100 100 L180 150 M100 100 L20 40 M100 100 L150 20'/%3E%3C/g%3E%3C/svg%3E");background-size: 300px 300px;animation: p2float 40s linear infinite;}
         .p2-pulse-line {position: absolute;width: 2px;height: 100%;left: 50%;background: linear-gradient(to bottom, transparent, var(--acc), transparent);opacity: 0.1;box-shadow: 0 0 20px var(--acc);animation: p2lineMove 8s ease-in-out infinite;}
@@ -122,28 +122,29 @@
         .p3-data-grid{position:absolute;inset:0;background-image: linear-gradient(rgba(255,69,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,69,0,0.03) 1px, transparent 1px);background-size: 100px 100px;perspective: 1000px;}
         .p3-moving-bits{position:absolute;width:100%;height:100%;background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' font-family='monospace' font-size='8' fill='rgba(255,69,0,0.1)'%3E1010%3C/text%3E%3C/svg%3E");animation: p3float 20s linear infinite;}
         
-        .data-column {flex:1;height:auto;min-height:70vh;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;padding:30px;position:relative;transition:0.4s ease;z-index:2;backdrop-filter:blur(5px);max-width: 450px;}
+        /* DATA COLUMNS FIXED SIZE */
+        .data-column {flex: 1 1 350px; max-width: 450px; height:auto; min-height:70vh; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); display:flex; flex-direction:column; padding:30px; position:relative; transition:0.4s ease; z-index:2; backdrop-filter:blur(5px)}
         .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
         .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
         .column-content {display:flex;flex-direction:column;gap:20px}
-        .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative; user-select: none; outline: none; overflow: hidden;}
+        
+        .pair-item {background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.05); padding:20px; transition:0.3s; cursor:pointer; position:relative; user-select: none; outline: none; overflow: hidden;}
         .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
         .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
         .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;position:relative}
         
         .pair-desc {font-size: 13px;color: #888;line-height: 1.5;max-height: 0;overflow: hidden;transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;opacity: 0;}
-        
-        /* Code Block Styling */
+
+        /* CODE & VIDEO CONTAINERS */
         .code-container { max-height: 0; opacity: 0; overflow: hidden; transition: 0.5s; margin-top: 0; }
         .pair-item.expanded .code-container { max-height: 400px; opacity: 1; margin-top: 15px; overflow-y: auto; }
-        pre[class*="language-"] { margin: 0; padding: 15px; font-size: 12px; border-radius: 4px; background: #080808 !important; border: 1px solid rgba(255,255,255,0.05); }
+        pre[class*="language-"] { margin: 0; padding: 15px; font-size: 11px; border-radius: 4px; background: #080808 !important; border: 1px solid rgba(255,255,255,0.05); }
 
-        /* Video Showcase Styling */
-        .video-box {width: 100%;height: 0;opacity: 0;margin-top: 0;background: #000;border: 1px solid transparent;position: relative;overflow: hidden;transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);}
+        .video-box { width: 100%; height: 0; opacity: 0; margin-top: 0; background: #000; border: 1px solid transparent; position: relative; overflow: hidden; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .video-box video { width: 100%; height: 100%; object-fit: cover; }
         .pair-item.expanded .video-box { height: 200px; opacity: 1; margin-top: 15px; border-color: var(--acc); }
 
-        .dropdown-arrow {width: 20px;height: 20px;fill: var(--acc);transition: transform 0.4s; transform: rotate(-90deg);}
+        .dropdown-arrow {width: 20px; height: 20px; fill: var(--acc); transition: transform 0.4s; transform: rotate(-90deg);}
         .pair-item.expanded .dropdown-arrow {transform: rotate(0deg);}
         .pair-item.expanded .pair-desc { max-height: 300px; opacity: 1; margin-top: 10px; }
 
@@ -254,7 +255,7 @@
                 <div class="pair-item" onclick="toggleDropdown(this)">
                     <div class="pair-meta">-- DATA STORE SYSTEM</div>
                     <div class="pair-title">SafeSave Handler <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">A robust data management system with retry logic and session locking.</div>
+                    <div class="pair-desc">Robust data management with retry logic and session locking.</div>
                     <div class="code-container">
 <pre><code class="language-lua">local DataStoreService = game:GetService("DataStoreService")
 local MyData = DataStoreService:GetDataStore("PlayerStats")
@@ -379,7 +380,6 @@ return FormatUtil</code></pre>
         <div class="hud-visual-elements">
             <div class="p4-digital-horizon"></div><div class="p4-particles"></div>
         </div>
-        
         <div class="contact-spec-row">
             <div class="spec-item">
                 <div class="spec-label">Internal Clock</div>
@@ -394,7 +394,6 @@ return FormatUtil</code></pre>
                 <div class="spec-value" style="color: var(--acc)">01 // CONTACT</div>
             </div>
         </div>
-
         <div class="wide-grid-container">
             <div class="contact-card" onclick="cpV('cryforhhxrizon','Discord')">
                 <div class="scan-line"></div>
@@ -411,7 +410,6 @@ return FormatUtil</code></pre>
                     <div class="footer-meta">COPY ID</div>
                 </div>
             </div>
-
             <div class="contact-card" onclick="window.open('https://www.roblox.com/users/2348993256/profile','_blank')">
                 <div class="scan-line"></div>
                 <div class="card-header-block">
@@ -427,7 +425,6 @@ return FormatUtil</code></pre>
                     <div class="footer-meta">VISIT</div>
                 </div>
             </div>
-
             <div class="contact-card" onclick="cpV('over.hxrizon@gmail.com','PayPal')">
                 <div class="scan-line"></div>
                 <div class="card-header-block">
@@ -451,13 +448,11 @@ return FormatUtil</code></pre>
 
     <script>
         const IS_ACTIVE = true;
-
         function updateStatus(){
             const s = document.getElementById('availability-status');
             const h = document.getElementById('heartbeat-box');
             const r = document.documentElement;
             const c = document.getElementById('comm-status');
-
             if(IS_ACTIVE){
                 s.innerText = "Status: Active"; 
                 if(c) c.innerText = "Available";
@@ -472,75 +467,29 @@ return FormatUtil</code></pre>
                 r.style.setProperty('--status-bg','rgba(255,75,43,0.1)');
             }
         }
-
         function updateGermanyTime() {
-            const options = {
-                timeZone: 'Europe/Berlin',
-                hour: '2-digit', minute: '2-digit', second: '2-digit',
-                hour12: false
-            };
+            const options = { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
             const formatter = new Intl.DateTimeFormat([], options);
             const timeElement = document.getElementById('germany-time');
-            if (timeElement) {
-                timeElement.innerHTML = formatter.format(new Date()) + "<span> GER (GMT+1)</span>";
-            }
+            if (timeElement) timeElement.innerHTML = formatter.format(new Date()) + "<span> GER (GMT+1)</span>";
         }
-
-        function updateFrameLabel(n) {
-            const label = document.getElementById('active-frame-label');
-            if (label) label.innerText = `PAGE_0${n}`;
-        }
-
-        function sTP(n){
-            const t=document.getElementById("page"+n); 
-            if(t) {
-                t.scrollIntoView({behavior:"smooth"});
-                updateFrameLabel(n);
-            }
-        }
-
-        const observerOptions = { threshold: 0.5 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const pageId = entry.target.id.replace('page', '');
-                    updateFrameLabel(pageId);
-                }
-            });
-        }, observerOptions);
-
+        function updateFrameLabel(n) { const label = document.getElementById('active-frame-label'); if (label) label.innerText = `PAGE_0${n}`; }
+        function sTP(n){ const t=document.getElementById("page"+n); if(t) { t.scrollIntoView({behavior:"smooth"}); updateFrameLabel(n); } }
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) updateFrameLabel(entry.target.id.replace('page', '')); }); }, { threshold: 0.5 });
         document.querySelectorAll('section').forEach(section => observer.observe(section));
-        
-        setInterval(() => {
-            const ping = document.getElementById('ms-ping');
-            if(ping) ping.innerText = Math.floor(Math.random() * 5 + 18) + "ms";
-        }, 2000);
-
-        updateStatus();
-        setInterval(updateGermanyTime, 1000);
-        updateGermanyTime();
-
+        setInterval(() => { const ping = document.getElementById('ms-ping'); if(ping) ping.innerText = Math.floor(Math.random() * 5 + 18) + "ms"; }, 2000);
+        updateStatus(); setInterval(updateGermanyTime, 1000); updateGermanyTime();
         function cpV(t,y){navigator.clipboard.writeText(t).then(()=>{sT(y+" Copied")})}
-        
         function sT(m){
             const c=document.getElementById('toast-container'), t=document.createElement('div');
             t.className='toast'; t.innerText=m; c.appendChild(t);
             setTimeout(()=>t.classList.add('show'),100);
             setTimeout(()=>{t.classList.remove('show'); setTimeout(()=>t.remove(),400)},3000);
         }
-
         function toggleDropdown(element) { 
             element.classList.toggle('expanded'); 
-            
-            // Auto-play video when expanded, pause when collapsed
             const video = element.querySelector('video');
-            if (video) {
-                if (element.classList.contains('expanded')) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            }
+            if (video) { if (element.classList.contains('expanded')) video.play(); else video.pause(); }
         }
     </script>
 </body>
