@@ -234,55 +234,70 @@
     </section>
 
     <section id="page2">
-        <div class="hud-visual-elements">
-            <div class="p2-neural-bg"></div><div class="p2-synapse-grid"></div><div class="p2-pulse-line"></div>
-        </div>
-        <div class="data-column">
-            <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
-            <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
-                </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
-                </div>
-            </div>
-        </div>
-        <div class="data-column">
-            <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
-            <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- MODULE</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
-                </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- MODULE</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
+    <div class="hud-visual-elements">
+        <div class="p2-neural-bg"></div><div class="p2-synapse-grid"></div><div class="p2-pulse-line"></div>
+    </div>
+
+    <div class="data-column">
+        <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
+        <div class="column-content">
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- LOGIC / DATASTORES</div>
+                <div class="pair-title">Data Handler <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-desc">
+                    <pre style="font-family: 'Fira Code'; font-size: 11px; color: #ccc; background: #000; padding: 10px; border-radius: 4px; overflow-x: auto;">
+local DataStoreService = game:GetService("DataStoreService")
+local PlayerData = DataStoreService:GetDataStore("v1_PlayerData")
+
+local function SaveData(player)
+    local success, err = pcall(function()
+        PlayerData:SetAsync(player.UserId, player.Leaderstats.Points.Value)
+    end)
+    if not success then warn(err) end
+end</pre>
                 </div>
             </div>
         </div>
-        <div class="data-column">
-            <div class="column-header"><span>03 // SHOWCASE</span><span>VIDEOS</span></div>
-            <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- VIDEO</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="video-box"></div>
-                </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- VIDEO</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="video-box"></div>
+    </div>
+
+    <div class="data-column">
+        <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
+        <div class="column-content">
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- MODULE / UI ANIMATION</div>
+                <div class="pair-title">Tween Controller <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-desc">
+                    <pre style="font-family: 'Fira Code'; font-size: 11px; color: #ccc; background: #000; padding: 10px; border-radius: 4px; overflow-x: auto;">
+local TweenService = game:GetService("TweenService")
+local UIController = {}
+
+function UIController:Pop(element)
+    local info = TweenInfo.new(0.3, Enum.EasingStyle.Back)
+    TweenService:Create(element, info, {Size = UDim2.fromScale(1.1, 1.1)}):Play()
+end
+
+return UIController</pre>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="data-column">
+        <div class="column-header"><span>03 // SHOWCASE</span><span>VIDEOS</span></div>
+        <div class="column-content">
+            <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- VIDEO / COMBAT SYSTEM</div>
+                <div class="pair-title">Sword System <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="video-box">
+                    <video width="100%" height="100%" controls style="object-fit: cover;">
+                        <source src="sword_showcase.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="page3">
         <div class="hud-visual-elements">
