@@ -123,6 +123,36 @@
         .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
         .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
         .column-content {display:flex;flex-direction:column;gap:20px}
+        
+        /* New Code Editor Styles */
+        .code-display-frame {
+            background: #050505;
+            border: 1px solid rgba(255, 69, 0, 0.2);
+            padding: 20px;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: auto;
+            margin-top: 5px;
+            border-radius: 4px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            text-align: left;
+        }
+        .code-display-frame::before {
+            content: "SOURCE_VIEWER";
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 9px;
+            color: var(--acc);
+            opacity: 0.5;
+        }
+        .code-keyword { color: #ff7b72; } 
+        .code-service { color: #79c0ff; }
+        .code-comment { color: #8b949e; font-style: italic; }
+        .code-string  { color: #a5d6ff; }
+
         .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s;cursor:pointer;position:relative; user-select: none; outline: none;}
         .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
         .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
@@ -240,16 +270,19 @@
         <div class="data-column">
             <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
             <div class="column-content">
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
+                <div class="pair-meta">-- LIVE_PREVIEW.lua</div>
+                <div class="code-display-frame">
+                    <span class="code-comment">-- Services</span><br>
+                    <span class="code-keyword">local</span> Players = game:GetService(<span class="code-string">"Players"</span>)<br>
+                    <span class="code-keyword">local</span> ReplicatedStorage = game:GetService(<span class="code-string">"ReplicatedStorage"</span>)<br>
+                    <span class="code-keyword">local</span> TweenService = game:GetService(<span class="code-string">"TweenService"</span>)<br>
+                    <span class="code-keyword">local</span> RunService = game:GetService(<span class="code-string">"RunService"</span>)<br>
+                    <br>
+                    <span class="code-comment">-- Example Implementation</span><br>
+                    <span class="code-keyword">local</span> <span class="code-service">Player</span> = Players.LocalPlayer<br>
+                    <span class="code-keyword">local</span> <span class="code-service">Mouse</span> = Player:GetMouse()<br>
                 </div>
-                <div class="pair-item" onclick="toggleDropdown(this)">
-                    <div class="pair-meta">-- LOGIC</div>
-                    <div class="pair-title">Example <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
-                    <div class="pair-desc">Pending</div>
-                </div>
+                <p style="font-size: 12px; color: #666; font-family: 'Roboto Condensed';">Example of my standardized service declaration and clean variable naming convention.</p>
             </div>
         </div>
         <div class="data-column">
