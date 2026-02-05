@@ -47,11 +47,7 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 
 .binary-bg{position:absolute;font-family:'Fira Code';font-size:8px;color:var(--acc);opacity:0.05;line-height:1;user-select:none;pointer-events:none;text-align:justify;width:120%}
 
-/* MODIFIED PAGE 3 FOR CENTERING */
 #page3{background:var(--bg1);flex-direction:column;justify-content:center;align-items:center;padding-top:var(--h-h)}
-
-.process-geometry-bg{position:absolute;inset:0;pointer-events:none}
-.blueprint-grid{position:absolute;inset:-50%;background-image:linear-gradient(rgba(255,69,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,69,0,.05) 1px,transparent 1px);background-size:80px 80px;transform:rotate(15deg);animation:gF 30s linear infinite}
 
 .process-decoration { position: absolute; inset: 0; overflow: hidden; opacity: 0.15; z-index: 1; }
 .geo-shape { position: absolute; border: 1px solid var(--acc); transform: rotate(45deg); animation: floatGeo 20s infinite linear; }
@@ -94,9 +90,9 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 .main-info h2{font-size:95px;font-weight:800;line-height:.82;margin-bottom:35px;text-transform:uppercase;letter-spacing:-4px}
 .main-info span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .intro-text{font-size:24px;line-height:1.4;border-left:4px solid var(--acc);padding-left:30px;margin-bottom:50px;max-width:650px}
-.perks-row{display:flex;gap:50px}
+.perks-row{display:flex;gap:40px}
 .perk-item strong{font-size:18px;text-transform:uppercase;display:block;margin-bottom:8px}
-.perk-item p{font-size:15px;color:#888;line-height:1.5}
+.perk-item p{font-size:14px;color:#888;line-height:1.5;max-width:200px}
 .showcase-right{flex:1;height:60vh;display:flex;align-items:center;justify-content:flex-end;perspective:1000px}
 .visual-container{width:450px;height:450px;position:relative;transform-style:preserve-3d;transform:rotateX(20deg) rotateY(-20deg)}
 .iso-box{position:absolute;top:50%;left:50%;width:200px;height:200px;transform:translate(-50%,-50%);border:2px solid var(--acc);background:rgba(255,69,0,.05);box-shadow:0 0 50px rgba(255,69,0,.2)}
@@ -145,8 +141,9 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 <h2>I AM<br><span>HHXRIZON</span></h2>
 <div class="intro-text">I specialize in clean, modular Luau development. My systems are built to be easily navigated and modified.</div>
 <div class="perks-row">
-<div class="perk-item"><strong>01 // Reliability</strong><p>Bugs aren't your problem. If something breaks post-payment, I'll fix it for free, no questions asked.</p></div>
-<div class="perk-item"><strong>02 // Scheduling</strong><p>Work on your time. I keep my schedule flexible to ensure fast turnaround and availability.</p></div>
+<div class="perk-item"><strong>01 // Reliability</strong><p>Bugs aren't your problem. If something breaks, I'll fix it for free.</p></div>
+<div class="perk-item"><strong>02 // Experience</strong><p>Over 2.5 years of experience scripting advanced Luau systems.</p></div>
+<div class="perk-item"><strong>03 // Scheduling</strong><p>Flexible hours to ensure fast turnaround on your project.</p></div>
 </div>
 </div>
 <div class="showcase-right">
@@ -154,86 +151,4 @@ section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
 <div class="wire-ring ring-1"></div><div class="wire-ring ring-2"></div>
 <div class="iso-box">
 <div class="tech-line line-v" style="left:20%"></div><div class="tech-line line-v" style="left:80%"></div><div class="tech-line line-h" style="top:50%"></div>
-<div class="corner-tag" style="top:10px;left:10px">SYSTEM_CORE</div><div class="corner-tag" style="bottom:10px;right:10px">ID: HX-01</div>
-</div>
-<div style="position:absolute;top:0;right:0;width:40px;height:40px;border-top:2px solid #fff;border-right:2px solid #fff"></div>
-<div style="position:absolute;bottom:0;left:0;width:40px;height:40px;border-bottom:2px solid #fff;border-left:2px solid #fff"></div>
-</div>
-</div>
-</section>
-<section id="page2">
-<div class="process-geometry-bg"><div class="blueprint-grid"></div><div class="process-circle p-circ-1"></div><div class="process-circle p-circ-2"></div><div class="data-scanner"></div></div>
-<div class="contact-cinematic-header"><h2>SYSTEM<br><span>ARCHIVE</span></h2></div>
-<div class="example-grid-container">
-<div class="pending-placeholder">
-    <div class="binary-bg">1010110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-    <div class="cube-visual"></div>
-    <div class="glitch-text">PENDING</div>
-    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
-</div>
-<div class="pending-placeholder">
-    <div class="binary-bg">0010110011101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-    <div class="cube-visual" style="animation-delay:-2s"></div>
-    <div class="glitch-text">PENDING</div>
-    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
-</div>
-<div class="pending-placeholder">
-    <div class="binary-bg">1110110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-    <div class="cube-visual" style="animation-delay:-5s"></div>
-    <div class="glitch-text">PENDING</div>
-    <div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
-</div>
-</div>
-</section>
-<section id="page3">
-<div class="process-decoration">
-    <div class="geo-shape shape-1"></div>
-    <div class="geo-shape shape-2"></div>
-    <div class="geo-shape shape-3"></div>
-</div>
-<div class="process-geometry-bg"><div class="blueprint-grid"></div><div class="process-circle p-circ-1"></div><div class="process-circle p-circ-2"></div><div class="data-scanner"></div></div>
-<div class="contact-cinematic-header"><h2>MY<br><span>PROCESS</span></h2></div>
-<div class="contact-wide-container">
-<div class="contact-card"><div class="card-bg-text">01</div><div><div class="card-tag">Phase // 01</div><div class="card-title">Concept</div><div class="card-value" style="margin-top:20px;line-height:1.6">Discussing your required system. View contacts for info.</div></div><div class="card-footer">X: 102.5 // Y: 44.0</div></div>
-<div class="contact-card"><div class="card-bg-text">02</div><div><div class="card-tag">Phase // 02</div><div class="card-title">Scripting</div><div class="card-value" style="margin-top:20px;line-height:1.6">Developing your desired code.</div></div><div class="card-footer">X: 205.1 // Y: 44.0</div></div>
-<div class="contact-card"><div class="card-bg-text">03</div><div><div class="card-tag">Phase // 03</div><div class="card-title">Refinement</div><div class="card-value" style="margin-top:20px;line-height:1.6">Testing and feedback.</div></div><div class="card-footer">X: 308.9 // Y: 44.0</div></div>
-</div>
-<div class="contact-card" style="width:100%;max-width:1400px;height:160px;margin-top:30px;flex-direction:row;align-items:center;gap:60px">
-<div class="card-bg-text">04</div><div style="position:relative;z-index:2"><div class="card-tag">Final // 04</div><div class="card-title">Delivery</div></div>
-<div class="card-value" style="font-size:16px;max-width:600px;z-index:2">Payment and final product sent in a RBXM/L file.</div>
-<div class="card-footer" style="margin-left:auto">EXECUTE_FINAL_BUILD</div>
-</div>
-</section>
-<section id="page4">
-<div class="page4-bg-overlay"></div>
-<div class="terminal-stream">local System = {}
-function System.init()
-  print("Initializing...")
-  return true
-end
--- HX-PROTOCOL-ACTIVE
-local meta = setmetatable({}, {
-  __index = function(t, k)
-    return "ACCESS_DENIED"
-  end
-})
-while task.wait(1) do
-  System.update()
-end
--- [END_OF_TRANSMISSION]</div>
-<div class="hud-bracket bracket-tl"></div><div class="hud-bracket bracket-br"></div>
-<div class="contact-visual-array"><div class="array-ring ring-lg"></div><div class="array-ring ring-md"></div><div class="array-ring ring-sm"></div></div>
-<div class="contact-cinematic-header"><h2>GET IN<br><span>TOUCH</span></h2></div>
-<div class="contact-wide-container">
-<div class="contact-card" onclick="cpV('cryforhhxrizon','Discord')"><div class="card-bg-text">01</div><div><div class="card-tag">Social // 01</div><div class="card-title">Discord</div><div class="card-value">cryforhhxrizon</div><div class="badge badge-primary">PRIMARY CONTACT</div></div><div class="card-footer">Click to copy handle</div></div>
-<div class="contact-card" onclick="window.open('https://www.roblox.com/users/2348993256/profile','_blank')"><div class="card-bg-text">02</div><div><div class="card-tag">Platform // 02</div><div class="card-title">Roblox</div><div class="card-value">@hhxrizon</div><div class="badge badge-success">STUDIO WORK</div></div><div class="card-footer">Visit Profile</div></div>
-<div class="contact-card" onclick="cpV('over.hxrizon@gmail.com','PayPal')"><div class="card-bg-text">03</div><div><div class="card-tag">Business // 03</div><div class="card-title">PayPal</div><div class="card-value">over.hxrizon@gmail.com</div><div class="badge badge-info">NO EMAILS</div></div><div class="card-footer">Copy for Billing</div></div>
-</div>
-</section>
-<script>
-function sTP(n){const t=document.getElementById("page"+n);if(t)t.scrollIntoView({behavior:"smooth"})}
-function cpV(t,y){navigator.clipboard.writeText(t).then(()=>{sT(y+" Copied")})}
-function sT(m){const c=document.getElementById('toast-container'),t=document.createElement('div');t.className='toast';t.innerText=m;c.appendChild(t);setTimeout(()=>t.classList.add('show'),100);setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),400)},3000)}
-</script>
-</body>
-</html>
+<div class="corner-tag" style="top:10px;
