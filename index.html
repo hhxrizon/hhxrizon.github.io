@@ -1,244 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>hhxrizon | Luau Commissions</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Roboto+Condensed:wght@700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--h-h:103px;--bg0:#0f0f0f;--bg1:#141414;--grad:linear-gradient(90deg,#ff8c00 0%,#ff4500 100%);--rev:linear-gradient(90deg,#ff4500 0%,#ff8c00 100%);--btn-h:68px;--sl:68px;--gap:15px;--acc:#ff4500;--rblx:#00e676;--error:#ff4b2b;--pp:#0070ba}
-body{height:100%;background:var(--bg0);color:#fff;font-family:Montserrat,sans-serif;overflow-x:hidden;scrollbar-width:none;scroll-behavior:smooth}
-body::-webkit-scrollbar{display:none}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(255,69,0,.05) 1px,transparent 1px);background-size:40px 40px;z-index:-1}
-.geo-overlay{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5}
-.hex-pattern{width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-rule='evenodd' stroke='rgba(255,69,0,0.05)' fill='none'/%3E%3C/svg%3E")}
-.spinning-bg-rings{position:absolute;top:50%;left:50%;width:800px;height:800px;border:1px solid rgba(255,69,0,.05);border-radius:50%;animation:bgS 60s linear infinite}
-@keyframes bgS{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-#topbar{position:fixed;top:0;width:100%;height:var(--h-h);z-index:9999;background:rgba(13,13,13,.8);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.05)}
-.brand-cluster{position:absolute;top:25px;left:25px;display:flex;align-items:center;gap:20px}
-.title{font-size:38px;font-weight:800;letter-spacing:-2px;line-height:.9}
-.subtitle{font-size:14px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
-.brand-divider{width:1px;height:40px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.2),transparent)}
-.brand-status{display:flex;flex-direction:column;gap:4px}
-.status-container{display:flex;align-items:center;gap:12px}
-.status-tag{font-family:'Fira Code';font-size:9px;color:var(--status-clr);background:var(--status-bg);padding:2px 8px;border:1px solid var(--status-clr);text-transform:uppercase;transition:0.3s}
-.status-label{font-size:9px;color:#444;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-.heartbeat-box{width:60px;height:20px;position:relative;overflow:hidden;opacity:0.8}
-.heartbeat-box svg{width:100%;height:100%}
-.heartbeat-box path{fill:none;stroke:var(--status-clr);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200}
-.pulse-active path{animation:heartbeat 2s linear infinite}
-@keyframes heartbeat{0%{stroke-dashoffset:200}40%{stroke-dashoffset:0}100%{stroke-dashoffset:-200}}
-.line-horizontal{position:absolute;top:102px;width:100%;height:1.5px;background:#fff;opacity:.2}
-.line-diagonal{position:absolute;top:51px;left:50%;width:146px;height:1.5px;background:#fff;opacity:.2;transform:rotate(-45deg) translateX(-50%);transform-origin:left center}
-.top-right-image{position:absolute;top:0;right:0;width:calc(50% + 51.5px);height:var(--h-h);overflow:hidden;clip-path:polygon(103px 0,100% 0,100% 100%,0 100%)}
-.top-right-image img{width:100%;height:100%;object-fit:cover;opacity:.15;filter:grayscale(1)}
-.top-right-buttons{position:absolute;top:15px;left:calc(50% + var(--gap));right:var(--gap);height:var(--btn-h);display:flex;gap:calc(var(--gap) - var(--sl));z-index:11}
-.top-right-buttons button{flex:1;height:var(--btn-h);background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.2);font-family:'Roboto Condensed';font-weight:700;font-size:16px;font-style:italic;cursor:pointer;text-transform:uppercase;clip-path:polygon(var(--sl) 0,100% 0,calc(100% - var(--sl)) 100%,0 100%);transition:.2s}
-.top-right-buttons button:hover{background:#fff;color:#000}
-.top-right-buttons button:last-child{clip-path:polygon(var(--sl) 0,100% 0,100% 100%,0 100%);border:3px solid;border-image:var(--rev) 1;padding-left:calc(var(--sl) / 2);font-weight:800}
-section{height:100vh;width:100vw;display:flex;padding:0 100px;position:relative}
-#page1{background:var(--bg1);align-items:center;justify-content:space-between}
-#page2{flex-direction:column;justify-content:center;overflow:hidden}
-.example-grid-container{z-index:2;width:100%;max-width:1400px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
-.pending-placeholder{position:relative;height:380px;background:#0d0d0d;border:1px solid rgba(255,69,0,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;transition:.4s}
-.pending-placeholder:hover{border-color:var(--acc);transform:translateY(-5px);background:#111}
-.pending-placeholder::before{content:"DATA_STREAM: 0x4F2A";position:absolute;top:15px;left:15px;font-family:'Fira Code';font-size:9px;color:var(--acc);opacity:.4}
-.glitch-text{font-family:'Fira Code';font-size:26px;font-weight:700;letter-spacing:6px;animation:tG 4s infinite;z-index:2}
-@keyframes tG{0%,6%{transform:translate(0);text-shadow:none}2%{transform:translate(-2px,1px);text-shadow:2px 0 var(--acc),-2px 0 var(--rblx)}4%{transform:translate(2px,-1px);text-shadow:-2px 0 var(--acc),2px 0 var(--rblx)}}
-.cube-visual{width:60px;height:60px;border:1px solid rgba(255,69,0,0.4);position:relative;transform-style:preserve-3d;animation:rotateCube 10s linear infinite;margin-bottom:30px}
-.cube-visual::after{content:"";position:absolute;inset:-10px;border:1px solid rgba(255,255,255,0.05)}
-@keyframes rotateCube{from{transform:rotateX(0deg) rotateY(0deg)}to{transform:rotateX(360deg) rotateY(360deg)}}
-.binary-bg{position:absolute;font-family:'Fira Code';font-size:8px;color:var(--acc);opacity:0.05;line-height:1;user-select:none;pointer-events:none;text-align:justify;width:120%}
-#page3{background:var(--bg1);flex-direction:column;justify-content:center;align-items:center;padding-top:var(--h-h)}
-.process-geometry-bg{position:absolute;inset:0;pointer-events:none}
-.blueprint-grid{position:absolute;inset:-50%;background-image:linear-gradient(rgba(255,69,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,69,0,.05) 1px,transparent 1px);background-size:80px 80px;transform:rotate(15deg);animation:gF 30s linear infinite}
-.process-decoration{position:absolute;inset:0;overflow:hidden;opacity:0.15;z-index:1}
-.geo-shape{position:absolute;border:1px solid var(--acc);transform:rotate(45deg);animation:floatGeo 20s infinite linear}
-.shape-1{width:300px;height:300px;top:-50px;left:10%;border-style:dashed}
-.shape-2{width:150px;height:150px;bottom:10%;right:5%}
-.shape-3{width:400px;height:400px;top:40%;left:-100px;opacity:0.5}
-@keyframes floatGeo{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(60deg) translate(20px,30px)}}
-@keyframes gF{from{transform:rotate(15deg) translateY(0)}to{transform:rotate(15deg) translateY(80px)}}
-.process-circle{position:absolute;border:1px solid rgba(255,69,0,.1);border-radius:50%}
-.p-circ-1{width:600px;height:600px;top:-100px;right:-100px;border-style:dashed;animation:bgS 40s linear infinite}
-.p-circ-2{width:400px;height:400px;bottom:-50px;left:-100px;border-width:2px}
-.data-scanner{position:absolute;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--acc),transparent);opacity:.3;animation:sV 6s ease-in-out infinite}
-@keyframes sV{0%,100%{top:0}50%{top:100%}}
-#page4{flex-direction:column;padding-top:calc(var(--h-h) + 40px);overflow:hidden}
-#page4::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,69,0,.08) 0%,transparent 50%);pointer-events:none}
-.page4-bg-overlay{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:100px 100px}
-.terminal-stream{position:absolute;top:var(--h-h);right:50px;width:300px;height:200%;font-family:'Fira Code';font-size:11px;color:var(--acc);opacity:.12;white-space:pre;animation:tS 35s linear infinite;text-shadow:0 0 5px var(--acc)}
-@keyframes tS{from{transform:translateY(0)}to{transform:translateY(-50%)}}
-.contact-cinematic-header{margin-bottom:40px;position:relative;z-index:2;width:100%;max-width:1400px}
-.contact-cinematic-header h2{font-size:110px;font-weight:800;letter-spacing:-5px;line-height:.9;text-transform:uppercase}
-.contact-cinematic-header span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.contact-wide-container{width:100%;max-width:1400px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:2}
-.contact-card{position:relative;height:350px;background:#121212;border:1px solid rgba(255,255,255,.05);border-left:2px solid rgba(255,255,255,.1);padding:40px;display:flex;flex-direction:column;justify-content:space-between;transition:.4s;cursor:pointer;overflow:hidden}
-.contact-card::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--acc);transform:scaleY(0);transition:.3s;transform-origin:top}
-.contact-card:hover{background:#1a1a1a;transform:translateY(-10px);border-color:rgba(255,69,0,.3);box-shadow:0 20px 40px #000}
-.contact-card:hover::before{transform:scaleY(1)}
-.card-bg-text{position:absolute;top:-10px;right:-10px;font-size:120px;font-weight:800;color:rgba(255,255,255,.02);font-style:italic;transition:.4s}
-.contact-card:hover .card-bg-text{color:rgba(255,69,0,.05);transform:scale(1.1)}
-.card-tag{font-family:'Fira Code';font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--acc)}
-.card-title{font-size:32px;font-weight:800;margin-top:10px;text-transform:uppercase}
-.card-value{font-size:18px;color:#888;font-family:'Roboto Condensed';transition:.3s}
-.contact-card:hover .card-value{color:#fff}
-.card-footer{font-family:'Fira Code';font-size:9px;color:#444;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
-.main-info{max-width:850px;z-index:2}
-.main-info h2{font-size:95px;font-weight:800;line-height:.82;margin-bottom:35px;text-transform:uppercase;letter-spacing:-4px}
-.main-info span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.intro-text{font-size:24px;line-height:1.4;border-left:4px solid var(--acc);padding-left:30px;margin-bottom:40px;max-width:650px}
-.perks-row{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 60px;max-width:750px}
-.perk-item{position:relative}
-.perk-item strong{font-size:18px;text-transform:uppercase;display:block;margin-bottom:8px}
-.perk-item p{font-size:14px;color:#888;line-height:1.5}
-.showcase-right{flex:1;height:60vh;display:flex;align-items:center;justify-content:flex-end;perspective:1000px}
-.visual-container{width:450px;height:450px;position:relative;transform-style:preserve-3d;transform:rotateX(20deg) rotateY(-20deg)}
-.iso-box{position:absolute;top:50%;left:50%;width:200px;height:200px;transform:translate(-50%,-50%);border:2px solid var(--acc);background:rgba(255,69,0,.05);box-shadow:0 0 50px rgba(255,69,0,.2)}
-.wire-ring{position:absolute;top:50%;left:50%;border:1px solid rgba(255,255,255,.1);transform-style:preserve-3d}
-.ring-1{width:350px;height:350px;transform:translate(-50%,-50%) rotateZ(45deg);animation:spinR 10s linear infinite}
-.ring-2{width:420px;height:420px;transform:translate(-50%,-50%) rotateZ(-45deg);animation:spinR 15s linear infinite reverse}
-@keyframes spinR{from{transform:translate(-50%,-50%) rotateZ(0)}to{transform:translate(-50%,-50%) rotateZ(360deg)}}
-.tech-line{position:absolute;background:var(--grad);opacity:.6}
-.line-v{width:1px;height:100%;top:0}
-.line-h{height:1px;width:100%;left:0}
-.corner-tag{position:absolute;font-family:'Fira Code';font-size:10px;color:var(--acc);text-transform:uppercase}
-.hud-bracket{position:absolute;width:100px;height:100px;border:1px solid rgba(255,69,0,.2);z-index:1;pointer-events:none}
-.bracket-tl{top:calc(var(--h-h) + 20px);left:40px;border-right:0;border-bottom:0}
-.bracket-br{bottom:40px;right:40px;border-left:0;border-top:0}
-.contact-visual-array{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:600px;height:600px;opacity:.1;pointer-events:none}
-.array-ring{position:absolute;top:50%;left:50%;border:1px solid var(--acc);border-radius:50%;transform:translate(-50%,-50%)}
-.ring-lg{width:100%;height:100%;border-style:dashed;animation:spinR 30s linear infinite}
-.ring-md{width:70%;height:70%;border-color:rgba(255,255,255,.2);border-width:2px}
-.ring-sm{width:30%;height:30%;background:rgba(255,69,0,.1)}
-#toast-container{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:10000;pointer-events:none}
-.toast{background:#1a1a1a;border:1px solid var(--acc);font-family:'Fira Code';padding:15px 30px;font-size:12px;text-transform:uppercase;margin-top:10px;transform:translateY(100px);opacity:0;transition:.4s}
-.toast.show{transform:translateY(0);opacity:1}
-.badge{display:inline-block;color:#000;font-weight:800;font-size:10px;padding:4px 10px;margin-top:12px;border-radius:2px;letter-spacing:1px}
-.badge-primary{background:var(--acc)}
-.badge-success{background:var(--rblx)}
-.badge-info{background:var(--pp);color:#fff}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>hhxrizon | Luau Commissions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800&family=Roboto+Condensed:wght@700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes p3float { from { background-position: 0 0; } to { background-position: -400px 400px; } }
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--h-h:103px;--bg0:#0f0f0f;--bg1:#141414;--grad:linear-gradient(90deg,#ff8c00 0%,#ff4500 100%);--rev:linear-gradient(90deg,#ff4500 0%,#ff8c00 100%);--btn-h:68px;--sl:68px;--gap:15px;--acc:#ff4500;--rblx:#00e676;--error:#ff4b2b;--pp:#0070ba}
+        body{height:100%;background:var(--bg0);color:#fff;font-family:Montserrat,sans-serif;overflow-x:hidden;scrollbar-width:none;scroll-behavior:smooth}
+        body::-webkit-scrollbar{display:none}
+        body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(255,69,0,.05) 1px,transparent 1px);background-size:40px 40px;z-index:-1}
+        .hud-visual-elements{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+        .grid-layer{position:absolute;inset:-100%;background-size:var(--g-size) var(--g-size);background-image:linear-gradient(var(--g-clr) 1px,transparent 1px),linear-gradient(90deg,var(--g-clr) 1px,transparent 1px);transform:rotate(var(--g-rot))}
+        .spinning-ring{position:absolute;border:1px solid rgba(255,69,0,0.1);border-radius:50%;animation:rotateRing var(--dur) linear infinite}
+        @keyframes rotateRing{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+        .geo-overlay{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5}
+        .hex-pattern{width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-rule='evenodd' stroke='rgba(255,69,0,0.05)' fill='none'/%3E%3C/svg%3E")}
+        #topbar{position:fixed;top:0;width:100%;height:var(--h-h);z-index:9999;background:rgba(13,13,13,.8);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.05)}
+        .brand-cluster{position:absolute;top:25px;left:25px;display:flex;align-items:center;gap:20px}
+        .title{font-size:38px;font-weight:800;letter-spacing:-2px;line-height:.9}
+        .subtitle{font-size:14px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+        .brand-divider{width:1px;height:40px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.2),transparent)}
+        .brand-status{display:flex;flex-direction:column;gap:4px}
+        .status-container{display:flex;align-items:center;gap:12px}
+        .status-tag{font-family:'Fira Code';font-size:9px;color:var(--status-clr);background:var(--status-bg);padding:2px 8px;border:1px solid var(--status-clr);text-transform:uppercase;transition:0.3s}
+        .status-label{font-size:9px;color:#444;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+        .heartbeat-box{width:60px;height:20px;position:relative;overflow:hidden;opacity:0.8}
+        .heartbeat-box svg{width:100%;height:100%}
+        .heartbeat-box path{fill:none;stroke:var(--status-clr);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200}
+        .pulse-active path{animation:heartbeat 2s linear infinite}
+        @keyframes heartbeat{0%{stroke-dashoffset:200}40%{stroke-dashoffset:0}100%{stroke-dashoffset:-200}}
+        .line-horizontal{position:absolute;top:102px;width:100%;height:1.5px;background:#fff;opacity:.2}
+        .line-diagonal{position:absolute;top:51px;left:50%;width:146px;height:1.5px;background:#fff;opacity:.2;transform:rotate(-45deg) translateX(-50%);transform-origin:left center}
+        .top-right-image{position:absolute;top:0;right:0;width:calc(50% + 51.5px);height:var(--h-h);overflow:hidden;clip-path:polygon(103px 0,100% 0,100% 100%,0 100%)}
+        .top-right-image img{width:100%;height:100%;object-fit:cover;opacity:.15;filter:grayscale(1)}
+        .top-right-buttons{position:absolute;top:15px;left:calc(50% + var(--gap));right:var(--gap);height:var(--btn-h);display:flex;gap:calc(var(--gap) - var(--sl));z-index:11}
+        .top-right-buttons button{flex:1;height:var(--btn-h);background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.2);font-family:'Roboto Condensed';font-weight:700;font-size:16px;font-style:italic;cursor:pointer;text-transform:uppercase;clip-path:polygon(var(--sl) 0,100% 0,calc(100% - var(--sl)) 100%,0 100%);transition:.2s}
+        .top-right-buttons button:hover{background:#fff;color:#000}
+        .top-right-buttons button:last-child{clip-path:polygon(var(--sl) 0,100% 0,100% 100%,0 100%);border:3px solid;border-image:var(--rev) 1;padding-left:calc(var(--sl) / 2);font-weight:800}
+        section{min-height:100vh;width:100vw;display:flex;padding:140px 100px 60px 100px;position:relative;overflow:hidden}
+        #page1{background: #0d0d0d;align-items:center;justify-content:space-between}
+        .p1-minimal-bg {position: absolute;inset: 0;background: radial-gradient(circle at 30% 50%, rgba(255,69,0,0.04) 0%, transparent 50%);z-index: 0;}
+        .p1-dot-matrix {position: absolute;inset: 0;background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);background-size: 30px 30px;mask-image: linear-gradient(to bottom, transparent, black, transparent);}
+        .p1-accents::before, .p1-accents::after {content: "";position: absolute;width: 100px;height: 100px;border: 1px solid rgba(255,69,0,0.1);opacity: 0.5;}
+        .p1-accents::before { top: 150px; left: 50px; border-right: 0; border-bottom: 0; }
+        .p1-accents::after { bottom: 50px; right: 50px; border-left: 0; border-top: 0; }
+        .main-info{max-width:850px;z-index:2}
+        .main-info h2{font-size:95px;font-weight:800;line-height:.82;margin-bottom:35px;text-transform:uppercase;letter-spacing:-4px}
+        .main-info span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .intro-text{font-size:24px;line-height:1.4;border-left:4px solid var(--acc);padding-left:30px;margin-bottom:40px;max-width:650px}
+        .perks-row{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 60px;max-width:750px}
+        .perk-item{position:relative}
+        .perk-item strong{font-size:18px;text-transform:uppercase;display:block;margin-bottom:8px}
+        .perk-item p{font-size:14px;color:#888;line-height:1.5}
+        .showcase-right{flex:1;height:60vh;display:flex;align-items:center;justify-content:flex-end;perspective:1000px}
+        .visual-container{width:450px;height:450px;position:relative;transform-style:preserve-3d;transform:rotateX(20deg) rotateY(-20deg)}
+        .iso-box{position:absolute;top:50%;left:50%;width:200px;height:200px;transform:translate(-50%,-50%);border:2px solid var(--acc);background:rgba(255,69,0,.05);box-shadow:0 0 50px rgba(255,69,0,.2)}
+        .wire-ring{position:absolute;top:50%;left:50%;border:1px solid rgba(255,255,255,0.1);transform-style:preserve-3d}
+        .ring-1{width:350px;height:350px;transform:translate(-50%,-50%) rotateZ(45deg);animation:spinR 10s linear infinite}
+        .ring-2{width:420px;height:420px;transform:translate(-50%,-50%) rotateZ(-45deg);animation:spinR 15s linear infinite reverse}
+        @keyframes spinR{from{transform:translate(-50%,-50%) rotateZ(0)}to{transform:translate(-50%,-50%) rotateZ(360deg)}}
+        .tech-line{position:absolute;background:var(--grad);opacity:.6}
+        .line-v{width:1px;height:100%;top:0}
+        .line-h{height:1px;width:100%;left:0}
+        .corner-tag{position:absolute;font-family:'Fira Code';font-size:10px;color:var(--acc);text-transform:uppercase}
+        #page2{flex-direction:row;justify-content:center;align-items:center;gap:30px;padding:140px 50px 60px 50px;background:#0a0a0a}
+        .p2-neural-bg {position: absolute;inset: 0;background: radial-gradient(circle at 20% 30%, rgba(255,69,0,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,69,0,0.08) 0%, transparent 40%);opacity: 0.6;}
+        .p2-synapse-grid {position: absolute;inset: 0;background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,69,0,0.1)' stroke-width='0.5'%3E%3Ccircle cx='100' cy='100' r='2' fill='rgba(255,69,0,0.2)'/%3E%3Cpath d='M100 100 L180 150 M100 100 L20 40 M100 100 L150 20'/%3E%3C/g%3E%3C/svg%3E");background-size: 300px 300px;animation: p2float 40s linear infinite;}
+        .p2-pulse-line {position: absolute;width: 2px;height: 100%;left: 50%;background: linear-gradient(to bottom, transparent, var(--acc), transparent);opacity: 0.1;box-shadow: 0 0 20px var(--acc);animation: p2lineMove 8s ease-in-out infinite;}
+        @keyframes p2float {0%{background-position:0 0}100%{background-position: 600px 300px}}
+        @keyframes p2lineMove {0%, 100%{left:10%; opacity:0} 50%{left:90%; opacity:0.2}}
+        #page3{background:var(--bg1);flex-direction:column;justify-content:flex-start;align-items:center}
+        .p3-data-grid{position:absolute;inset:0;background-image: linear-gradient(rgba(255,69,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,69,0,0.03) 1px, transparent 1px);background-size: 100px 100px;perspective: 1000px;}
+        .p3-moving-bits{position:absolute;width:100%;height:100%;background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' font-family='monospace' font-size='8' fill='rgba(255,69,0,0.1)'%3E1010%3C/text%3E%3C/svg%3E");animation: p3float 20s linear infinite;}
+        #page4{background:#080808;flex-direction:column; border-top: 1px solid rgba(255,69,0,0.1);}
+        .p4-digital-horizon {position: absolute;inset: 0;background: radial-gradient(circle at 50% 100%, rgba(255,69,0,0.12) 0%, transparent 60%), linear-gradient(to bottom, #080808, #0f0f0f);overflow: hidden;}
+        .p4-particles {position: absolute;inset: 0;background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-family='Fira Code' font-size='6' fill='rgba(255,69,0,0.15)'%3Efunction%3C/text%3E%3Ctext x='50' y='80' font-family='Fira Code' font-size='5' fill='rgba(255,69,0,0.1)'%3Elocal%3C/text%3E%3Cpath d='M80 20 L85 25 L80 30' stroke='rgba(255,69,0,0.1)' fill='none'/%3E%3C/svg%3E");background-size: 250px 250px;animation: p4drift 60s linear infinite;}
+        .p4-radar-sweep {position: absolute;top: 50%;left: 50%;width: 200%;height: 200%;background: conic-gradient(from 0deg, transparent, rgba(255,69,0,0.05) 10%, transparent 20%);transform: translate(-50%, -50%);animation: rotateRing 10s linear infinite;}
+        .p4-corner-bracket {position: absolute;width: 300px;height: 300px;border: 1px solid rgba(255,69,0,0.05);opacity: 0.5;}
+        .bracket-tl { top: -50px; left: -50px; border-radius: 40px; border-right: 0; border-bottom: 0; animation: p4float 8s ease-in-out infinite; }
+        .bracket-br { bottom: -50px; right: -50px; border-radius: 40px; border-left: 0; border-top: 0; animation: p4float 8s ease-in-out infinite reverse; }
+        @keyframes p4drift { from { background-position: 0 0; } to { background-position: 500px 1000px; } }
+        @keyframes p4float { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(20px, 20px) rotate(5deg); } }
+        .data-column {flex:1;height:auto;min-height:70vh;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;padding:30px;position:relative;transition:0.4s ease;z-index:2;backdrop-filter:blur(5px)}
+        .data-column:hover {border-color:var(--acc);background:rgba(255,69,0,0.02)}
+        .column-header {font-family:'Fira Code';font-size:11px;color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;border-bottom:1px solid rgba(255,69,0,0.3);padding-bottom:10px;display:flex;justify-content:space-between}
+        .column-content {display:flex;flex-direction:column;gap:20px}
+        .pair-item {background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:20px;transition:0.3s}
+        .pair-item:hover {background:rgba(255,255,255,0.05);transform:scale(1.02)}
+        .pair-meta {font-family:'Fira Code';font-size:9px;color:#555;margin-bottom:8px}
+        .pair-title {font-size:18px;font-weight:700;margin-bottom:10px;color:#fff}
+        .pair-desc {font-size:13px;color:#888;line-height:1.5}
+        .video-box {width:100%;height:140px;background:#000;margin-top:15px;display:flex;align-items:center;justify-content:center;border:1px solid #222;position:relative;overflow:hidden}
+        .video-box::before {content:"PENDING";font-family:'Fira Code';font-size:10px;color:var(--acc);opacity:0.5}
+        .contact-cinematic-header{margin-bottom:40px;position:relative;z-index:2;width:100%;max-width:1400px}
+        .contact-cinematic-header h2{font-size:110px;font-weight:800;letter-spacing:-5px;line-height:.9;text-transform:uppercase}
+        .contact-cinematic-header span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .contact-wide-container{width:100%;max-width:1400px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:2}
+        .contact-card{position:relative;height:350px;background:#121212;border:1px solid rgba(255,255,255,.05);border-left:2px solid rgba(255,255,255,.1);padding:40px;display:flex;flex-direction:column;justify-content:space-between;transition:.4s;cursor:pointer;overflow:hidden;backdrop-filter:blur(5px)}
+        .contact-card:hover{background:#1a1a1a;transform:translateY(-10px);border-color:rgba(255,69,0,.3);box-shadow:0 20px 40px #000}
+        .card-bg-text{position:absolute;top:-10px;right:-10px;font-size:120px;font-weight:800;color:rgba(255,255,255,.02);font-style:italic;transition:.4s}
+        .card-tag{font-family:'Fira Code';font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--acc)}
+        .card-title{font-size:32px;font-weight:800;margin-top:10px;text-transform:uppercase}
+        .card-value{font-size:18px;color:#888;font-family:'Roboto Condensed';transition:.3s}
+        .card-footer{font-family:'Fira Code';font-size:9px;color:#444;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+        .terminal-stream{position:absolute;top:var(--h-h);right:50px;width:300px;height:200%;font-family:'Fira Code';font-size:11px;color:var(--acc);opacity:.12;white-space:pre;animation:tS 35s linear infinite;text-shadow:0 0 5px var(--acc);z-index:1}
+        @keyframes tS{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+        #toast-container{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:10000;pointer-events:none}
+        .toast{background:#1a1a1a;border:1px solid var(--acc);font-family:'Fira Code';padding:15px 30px;font-size:12px;text-transform:uppercase;margin-top:10px;transform:translateY(100px);opacity:0;transition:.4s}
+        .toast.show{transform:translateY(0);opacity:1}
+        .badge{display:inline-block;color:#000;font-weight:800;font-size:10px;padding:4px 10px;margin-top:12px;border-radius:2px;letter-spacing:1px}
+        .badge-primary{background:var(--acc)}
+        .badge-success{background:var(--rblx)}
+        .badge-info{background:var(--pp);color:#fff}
+    </style>
 </head>
 <body>
-<div class="geo-overlay"><div class="hex-pattern"></div><div class="spinning-bg-rings"></div></div>
-<nav id="topbar">
-<div class="brand-cluster">
-<div class="brand-text"><div class="title">hhxrizon</div><div class="subtitle">Luau Development</div></div>
-<div class="brand-divider"></div>
-<div class="brand-status">
-<span class="status-label">Availability</span>
-<div class="status-container">
-<span class="status-tag" id="availability-status">Status: Active</span>
-<div class="heartbeat-box" id="heartbeat-box">
-<svg viewBox="0 0 100 20"><path d="M0 10 H30 L35 2 L45 18 L50 10 H100"/></svg>
-</div>
-</div>
-</div>
-</div>
-<div class="line-horizontal"></div><div class="line-diagonal"></div>
-<div class="top-right-image"><img src="DSC_00513.jpg"></div>
-<div class="top-right-buttons">
-<button onclick="sTP(1)">About</button><button onclick="sTP(2)">Examples</button><button onclick="sTP(3)">Process</button><button onclick="sTP(4)">Contact</button>
-</div>
-</nav>
-<div id="toast-container"></div>
-<section id="page1">
-<div class="main-info">
-<h2>I AM<br><span>HHXRIZON</span></h2>
-<div class="intro-text">I specialize in clean, modular Luau development. My systems are built to be easily navigated and modified.</div>
-<div class="perks-row">
-<div class="perk-item"><strong>01 // Experience</strong><p>Over 2.5 years of experience in Luau, creating complex and efficient game systems.</p></div>
-<div class="perk-item"><strong>02 // Scheduling</strong><p>Work on your time. My flexible schedule ensures fast responses and availability.</p></div>
-<div class="perk-item"><strong>03 // Reliability</strong><p>If you encounter a bug post-payment, I'll fix it for free, no questions asked.</p></div>
-<div class="perk-item"><strong>04 // Customizability</strong><p>I script using modules, making every system easy to tweak to your liking.</p></div>
-</div>
-</div>
-<div class="showcase-right">
-<div class="visual-container">
-<div class="wire-ring ring-1"></div><div class="wire-ring ring-2"></div>
-<div class="iso-box">
-<div class="tech-line line-v" style="left:20%"></div><div class="tech-line line-v" style="left:80%"></div><div class="tech-line line-h" style="top:50%"></div>
-<div class="corner-tag" style="top:10px;left:10px">SYSTEM_CORE</div><div class="corner-tag" style="bottom:10px;right:10px">ID: HX-01</div>
-</div>
-<div style="position:absolute;top:0;right:0;width:40px;height:40px;border-top:2px solid #fff;border-right:2px solid #fff"></div>
-<div style="position:absolute;bottom:0;left:0;width:40px;height:40px;border-bottom:2px solid #fff;border-left:2px solid #fff"></div>
-</div>
-</div>
-</section>
-<section id="page2">
-<div class="process-geometry-bg"><div class="blueprint-grid"></div><div class="process-circle p-circ-1"></div><div class="process-circle p-circ-2"></div><div class="data-scanner"></div></div>
-<div class="contact-cinematic-header"><h2>SYSTEM<br><span>ARCHIVE</span></h2></div>
-<div class="example-grid-container">
-<div class="pending-placeholder">
-<div class="binary-bg">1010110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-<div class="cube-visual"></div>
-<div class="glitch-text">PENDING</div>
-<div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
-</div>
-<div class="pending-placeholder">
-<div class="binary-bg">0010110011101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-<div class="cube-visual" style="animation-delay:-2s"></div>
-<div class="glitch-text">PENDING</div>
-<div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
-</div>
-<div class="pending-placeholder">
-<div class="binary-bg">1110110010101011010101101101010101010101101101010101011010101101010110110101010101010110110101010101101010110101011011010101010101011011010101010110101011010101101101010101010101101101010101</div>
-<div class="cube-visual" style="animation-delay:-5s"></div>
-<div class="glitch-text">PENDING</div>
-<div style="font-family:'Fira Code';font-size:11px;color:#444;margin-top:12px;z-index:2">WAITING_FOR_BUILD</div>
-</div>
-</div>
-</section>
-<section id="page3">
-<div class="process-decoration">
-<div class="geo-shape shape-1"></div>
-<div class="geo-shape shape-2"></div>
-<div class="geo-shape shape-3"></div>
-</div>
-<div class="process-geometry-bg"><div class="blueprint-grid"></div><div class="process-circle p-circ-1"></div><div class="process-circle p-circ-2"></div><div class="data-scanner"></div></div>
-<div class="contact-cinematic-header"><h2>MY<br><span>PROCESS</span></h2></div>
-<div class="contact-wide-container">
-<div class="contact-card"><div class="card-bg-text">01</div><div><div class="card-tag">Phase // 01</div><div class="card-title">Concept</div><div class="card-value" style="margin-top:20px;line-height:1.6">Discussing your required system. View contacts for info.</div></div><div class="card-footer">X: 102.5 // Y: 44.0</div></div>
-<div class="contact-card"><div class="card-bg-text">02</div><div><div class="card-tag">Phase // 02</div><div class="card-title">Scripting</div><div class="card-value" style="margin-top:20px;line-height:1.6">Developing your desired code.</div></div><div class="card-footer">X: 205.1 // Y: 44.0</div></div>
-<div class="contact-card"><div class="card-bg-text">03</div><div><div class="card-tag">Phase // 03</div><div class="card-title">Refinement</div><div class="card-value" style="margin-top:20px;line-height:1.6">Testing and feedback.</div></div><div class="card-footer">X: 308.9 // Y: 44.0</div></div>
-</div>
-<div class="contact-card" style="width:100%;max-width:1400px;height:160px;margin-top:30px;flex-direction:row;align-items:center;gap:60px">
-<div class="card-bg-text">04</div><div style="position:relative;z-index:2"><div class="card-tag">Final // 04</div><div class="card-title">Delivery</div></div>
-<div class="card-value" style="font-size:16px;max-width:600px;z-index:2">Payment and final product sent in a RBXM/L file.</div>
-<div class="card-footer" style="margin-left:auto">EXECUTE_FINAL_BUILD</div>
-</div>
-</section>
-<section id="page4">
-<div class="page4-bg-overlay"></div>
-<div class="terminal-stream">local System = {}
-function System.init()
-return true
-end
-local meta = setmetatable({}, {
-__index = function(t, k)
-return "ACCESS_DENIED"
-end
-})
-while task.wait(1) do
-System.update()
-end</div>
-<div class="hud-bracket bracket-tl"></div><div class="hud-bracket bracket-br"></div>
-<div class="contact-visual-array"><div class="array-ring ring-lg"></div><div class="array-ring ring-md"></div><div class="array-ring ring-sm"></div></div>
-<div class="contact-cinematic-header"><h2>GET IN<br><span>TOUCH</span></h2></div>
-<div class="contact-wide-container">
-<div class="contact-card" onclick="cpV('cryforhhxrizon','Discord')"><div class="card-bg-text">01</div><div><div class="card-tag">Social // 01</div><div class="card-title">Discord</div><div class="card-value">cryforhhxrizon</div><div class="badge badge-primary">PRIMARY CONTACT</div></div><div class="card-footer">Click to copy handle</div></div>
-<div class="contact-card" onclick="window.open('https://www.roblox.com/users/2348993256/profile','_blank')"><div class="card-bg-text">02</div><div><div class="card-tag">Platform // 02</div><div class="card-title">Roblox</div><div class="card-value">@hhxrizon</div><div class="badge badge-success">STUDIO WORK</div></div><div class="card-footer">Visit Profile</div></div>
-<div class="contact-card" onclick="cpV('over.hxrizon@gmail.com','PayPal')"><div class="card-bg-text">03</div><div><div class="card-tag">Business // 03</div><div class="card-title">PayPal</div><div class="card-value">over.hxrizon@gmail.com</div><div class="badge badge-info">NO EMAILS</div></div><div class="card-footer">Copy for Billing</div></div>
-</div>
-</section>
-<script>
-const IS_ACTIVE = true;
-function updateStatus(){const s=document.getElementById('availability-status'),h=document.getElementById('heartbeat-box'),r=document.documentElement;if(IS_ACTIVE){s.innerText="Status: Active";h.classList.add('pulse-active');r.style.setProperty('--status-clr','var(--rblx)');r.style.setProperty('--status-bg','rgba(0,230,118,0.1)')}else{s.innerText="Status: Inactive";h.classList.remove('pulse-active');r.style.setProperty('--status-clr','var(--error)');r.style.setProperty('--status-bg','rgba(255,75,43,0.1)')}}
-updateStatus();
-function sTP(n){const t=document.getElementById("page"+n);if(t)t.scrollIntoView({behavior:"smooth"})}
-function cpV(t,y){navigator.clipboard.writeText(t).then(()=>{sT(y+" Copied")})}
-function sT(m){const c=document.getElementById('toast-container'),t=document.createElement('div');t.className='toast';t.innerText=m;c.appendChild(t);setTimeout(()=>t.classList.add('show'),100);setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),400)},3000)}
-</script>
+    <div class="geo-overlay"><div class="hex-pattern"></div></div>
+    <nav id="topbar">
+        <div class="brand-cluster">
+            <div class="brand-text"><div class="title">hhxrizon</div><div class="subtitle">Luau Development</div></div>
+            <div class="brand-divider"></div>
+            <div class="brand-status">
+                <span class="status-label">Availability</span>
+                <div class="status-container">
+                    <span class="status-tag" id="availability-status">Status: Active</span>
+                    <div class="heartbeat-box" id="heartbeat-box"><svg viewBox="0 0 100 20"><path d="M0 10 H30 L35 2 L45 18 L50 10 H100"/></svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="line-horizontal"></div><div class="line-diagonal"></div>
+        <div class="top-right-image"><img src="DSC_00513.jpg"></div>
+        <div class="top-right-buttons">
+            <button onclick="sTP(1)">About</button><button onclick="sTP(2)">Examples</button><button onclick="sTP(3)">Process</button><button onclick="sTP(4)">Contact</button>
+        </div>
+    </nav>
+    <div id="toast-container"></div>
+    <section id="page1">
+        <div class="p1-minimal-bg"></div><div class="p1-dot-matrix"></div><div class="p1-accents"></div>
+        <div class="main-info">
+            <h2>I AM<br><span>HHXRIZON</span></h2>
+            <div class="intro-text">I specialize in clean, modular Luau development. My systems are built to be easily navigated and modified.</div>
+            <div class="perks-row">
+                <div class="perk-item"><strong>01 // Experience</strong><p>Over 2.5 years of experience in Luau, creating complex and efficient game systems.</p></div>
+                <div class="perk-item"><strong>02 // Scheduling</strong><p>Work on your time. My flexible schedule ensures fast responses and availability.</p></div>
+                <div class="perk-item"><strong>03 // Reliability</strong><p>If you encounter a bug post-payment, I'll fix it for free, no questions asked.</p></div>
+                <div class="perk-item"><strong>04 // Customizability</strong><p>I script using modules, making every system easy to tweak to your liking.</p></div>
+            </div>
+        </div>
+        <div class="showcase-right">
+            <div class="visual-container">
+                <div class="wire-ring ring-1"></div><div class="wire-ring ring-2"></div>
+                <div class="iso-box">
+                    <div class="tech-line line-v" style="left:20%"></div><div class="tech-line line-v" style="left:80%"></div><div class="tech-line line-h" style="top:50%"></div>
+                    <div class="corner-tag" style="top:10px;left:10px">SYSTEM_CORE</div><div class="corner-tag" style="bottom:10px;right:10px">ID: HX-01</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="page2">
+        <div class="hud-visual-elements">
+            <div class="p2-neural-bg"></div><div class="p2-synapse-grid"></div><div class="p2-pulse-line"></div>
+            <div class="spinning-ring" style="width:1200px; height:1200px; top:50%; left:50%; --dur: 150s; opacity: 0.03; border-style: dashed"></div>
+        </div>
+        <div class="data-column">
+            <div class="column-header"><span>01 // SCRIPTS</span><span>LUAU</span></div>
+            <div class="column-content">
+                <div class="pair-item">
+                    <div class="pair-meta">-- LOGIC</div><div class="pair-title">Example</div><div class="pair-desc">Pending</div>
+                </div>
+                <div class="pair-item">
+                    <div class="pair-meta">-- LOGIC</div><div class="pair-title">Example</div><div class="pair-desc">Pending</div>
+                </div>
+            </div>
+        </div>
+        <div class="data-column">
+            <div class="column-header"><span>02 // MODULES</span><span>CUSTOMIZE</span></div>
+            <div class="column-content">
+                <div class="pair-item">
+                    <div class="pair-meta">-- MODULE</div><div class="pair-title">Example</div><div class="pair-desc">Pending</div>
+                </div>
+                <div class="pair-item">
+                    <div class="pair-meta">-- MODULE</div><div class="pair-title">Example</div><div class="pair-desc">Pending</div>
+                </div>
+            </div>
+        </div>
+        <div class="data-column">
+            <div class="column-header"><span>03 // SHOWCASE</span><span>VIDEOS</span></div>
+            <div class="column-content">
+                <div class="pair-item">
+                    <div class="pair-meta">-- VIDEO</div><div class="pair-title">Example</div><div class="video-box"></div>
+                </div>
+                <div class="pair-item">
+                    <div class="pair-meta">-- VIDEO</div><div class="pair-title">Example</div><div class="video-box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="page3">
+        <div class="hud-visual-elements">
+            <div class="p3-data-grid"></div><div class="p3-moving-bits"></div>
+            <div class="spinning-ring" style="width:400px; height:400px; top:80%; left:10%; --dur: 15s; border-style: dotted; opacity: 0.1"></div>
+        </div>
+        <div class="contact-cinematic-header"><h2>MY<br><span>PROCESS</span></h2></div>
+        <div class="contact-wide-container">
+            <div class="contact-card"><div class="card-bg-text">01</div><div><div class="card-tag">Phase // 01</div><div class="card-title">Concept</div><div class="card-value" style="margin-top:20px;line-height:1.6">Discussing your required system.</div></div><div class="card-footer">X: 102.5 // Y: 44.0</div></div>
+            <div class="contact-card"><div class="card-bg-text">02</div><div><div class="card-tag">Phase // 02</div><div class="card-title">Scripting</div><div class="card-value" style="margin-top:20px;line-height:1.6">Developing your desired code.</div></div><div class="card-footer">X: 205.1 // Y: 44.0</div></div>
+            <div class="contact-card"><div class="card-bg-text">03</div><div><div class="card-tag">Phase // 03</div><div class="card-title">Refinement</div><div class="card-value" style="margin-top:20px;line-height:1.6">Testing and feedback.</div></div><div class="card-footer">X: 308.9 // Y: 44.0</div></div>
+        </div>
+        <div class="contact-card" style="width:100%;max-width:1400px;height:160px;margin-top:30px;flex-direction:row;align-items:center;gap:60px">
+            <div class="card-bg-text">04</div><div style="position:relative;z-index:2"><div class="card-tag">Final // 04</div><div class="card-title">Delivery</div></div>
+            <div class="card-value" style="font-size:16px;max-width:600px;z-index:2">Payment and final product sent in a RBXM/L file.</div>
+            <div class="card-footer" style="margin-left:auto">EXECUTE_FINAL_BUILD</div>
+        </div>
+    </section>
+    <section id="page4">
+        <div class="hud-visual-elements"><div class="p4-digital-horizon"><div class="p4-radar-sweep"></div><div class="p4-particles"></div><div class="p4-corner-bracket bracket-tl"></div><div class="p4-corner-bracket bracket-br"></div></div></div>
+        <div class="terminal-stream">local System = {} function System.init() return true end while task.wait(1) do System.update() end</div>
+        <div class="contact-cinematic-header"><h2>GET IN<br><span>TOUCH</span></h2></div>
+        <div class="contact-wide-container">
+            <div class="contact-card" onclick="cpV('cryforhhxrizon','Discord')"><div class="card-bg-text">01</div><div><div class="card-tag">Social // 01</div><div class="card-title">Discord</div><div class="card-value">cryforhhxrizon</div><div class="badge badge-primary">PRIMARY CONTACT</div></div><div class="card-footer">Click to copy handle</div></div>
+            <div class="contact-card" onclick="window.open('https://www.roblox.com/users/2348993256/profile','_blank')"><div class="card-bg-text">02</div><div><div class="card-tag">Platform // 02</div><div class="card-title">Roblox</div><div class="card-value">@hhxrizon</div><div class="badge badge-success">STUDIO WORK</div></div><div class="card-footer">Visit Profile</div></div>
+            <div class="contact-card" onclick="cpV('over.hxrizon@gmail.com','PayPal')"><div class="card-bg-text">03</div><div><div class="card-tag">Business // 03</div><div class="card-title">PayPal</div><div class="card-value">over.hxrizon@gmail.com</div><div class="badge badge-info">NO EMAILS</div></div><div class="card-footer">Copy for Billing</div></div>
+        </div>
+    </section>
+    <script>
+        const IS_ACTIVE = true;
+        function updateStatus(){const s=document.getElementById('availability-status'),h=document.getElementById('heartbeat-box'),r=document.documentElement;if(IS_ACTIVE){s.innerText="Status: Active";h.classList.add('pulse-active');r.style.setProperty('--status-clr','var(--rblx)');r.style.setProperty('--status-bg','rgba(0,230,118,0.1)')}else{s.innerText="Status: Inactive";h.classList.remove('pulse-active');r.style.setProperty('--status-clr','var(--error)');r.style.setProperty('--status-bg','rgba(255,75,43,0.1)')}}
+        updateStatus();
+        function sTP(n){const t=document.getElementById("page"+n);if(t)t.scrollIntoView({behavior:"smooth"})}
+        function cpV(t,y){navigator.clipboard.writeText(t).then(()=>{sT(y+" Copied")})}
+        function sT(m){const c=document.getElementById('toast-container'),t=document.createElement('div');t.className='toast';t.innerText=m;c.appendChild(t);setTimeout(()=>t.classList.add('show'),100);setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),400)},3000)}
+    </script>
 </body>
 </html>
