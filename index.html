@@ -393,6 +393,56 @@ return Settings
 -- OpenAngle</code></pre>
                 </div> 
             </div>
+             <div class="pair-item" onclick="toggleDropdown(this)">
+                <div class="pair-meta">-- MODULE / JOHN'S DINER</div>
+                <div class="pair-title">Door Module <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="pair-desc">
+                    <pre><code class="language-lua">-- Module
+local Lootboxes = {
+	MaxLootboxes = 10,
+	LootboxRarityWeights = {
+		Common = 40,
+		Uncommon = 30,
+		Rare = 15,
+		Epic = 10,
+		Legendary = 5,
+	},
+	Boxes = {
+		["ASSAULT BOX"] = {
+			Cost = 250,
+			ImageID = "",
+			Skins = {
+				Common = {
+					"Sand Trooper",
+					"Cadet",
+					"Army Trooper Assault MK1",
+					"501st MK2",
+				},
+				Uncommon = {
+					"Shoretrooper MK1",
+					"Shoretrooper MK2",
+					"Stormtrooper MK2",
+					"Army Trooper Assault MK2",
+				},
+				Rare = {
+					"Patrol Trooper (Assault)",
+					"Army Trooper Assault MK3",
+				},
+				Epic = {
+					"Snowtrooper",
+					"Vader's Fist MK1",
+				},
+				Legendary = {
+					"Shadow Trooper MK1",
+					"Shadow Trooper MK2",
+				},
+			},
+		},
+	},
+}
+return Lootboxes</code></pre>
+                </div> 
+            </div>
         </div>
     </div>
 
